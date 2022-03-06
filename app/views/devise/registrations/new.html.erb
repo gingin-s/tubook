@@ -1,0 +1,45 @@
+  <%= render "shared/header" %>
+
+<div class="modal modal-signin position-static d-block py-0" tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h2 class="fw-bold mb-0 fs-3">新規登録</h2>
+      </div>
+
+      <div class="modal-body p-5 pt-0">
+        <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+          <div class="mb-3">
+            <%= f.label :nickname, "ユーザー名" %>
+            <%= f.email_field :email, id: "email", placeholder: "ユーザー名", class: "form-control rounded-4", autofocus: true %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :email, "メールアドレス" %>
+            <%= f.email_field :email, id: "email", placeholder: "name@example.com", class: "form-control rounded-4" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, "パスワード" %>
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> 桁以上で入力してください)</em>
+              <% end %><br />
+            <%= f.password_field :password, id: "password", placeholder: "password", class: "form-control rounded-4" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password_confirmation, "パスワード(再入力)"%>
+            <%= f.password_field :password_confirmation, id: "password-confirmation", placeholder: "password(確認)", class: "form-control rounded-4" %>
+          </div>
+          <%= f.submit "Sign up", class: "w-100 mb-2 btn btn-lg rounded-4 btn-primary" %>
+        <% end%>
+        <hr class="my-4">
+        <div class="conteiner" >
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <h2 class="fs-6 mb-3 text-center">アカウントをお持ちの方はこちら</h2>
+              <div class="ms-3 mb-3">
+                <%= link_to "ログイン", class:"link-to-login" %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
