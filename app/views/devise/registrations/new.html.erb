@@ -1,4 +1,4 @@
-  <%= render "shared/header" %>
+<%= render "shared/header" %>
 
 <div class="modal modal-signin position-static d-block py-0" tabindex="-1" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
@@ -35,7 +35,7 @@
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <h2 class="fs-6 mb-3 text-center">アカウントをお持ちの方はこちら</h2>
               <div class="ms-3 mb-3">
-                <%= link_to "ログイン", class:"link-to-login" %>
+                <%= link_to "ログイン", new_user_session_path, class:"link-to-login" %>
               </div>
             </div>
         </div>
