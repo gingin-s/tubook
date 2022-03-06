@@ -9,9 +9,11 @@
 
       <div class="modal-body p-5 pt-0">
         <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+
           <div class="mb-3">
-            <%= f.label :nickname, "ユーザー名" %>
-            <%= f.email_field :email, id: "email", placeholder: "ユーザー名", class: "form-control rounded-4", autofocus: true %>
+            <%= f.label :nickname, "アカウント名  半角(大文字・小文字・数字・_ )のみ " %>
+            <%= f.text_field :nickname, id: "nickname", placeholder: "アカウント名", class: "form-control rounded-4", autofocus: true %>
           </div>
           <div class="mb-3">
             <%= f.label :email, "メールアドレス" %>
