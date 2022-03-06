@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="umadqKbsm3XCNE1R_4kH" name="ページ1">
-        <mxGraphModel dx="248" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1298" dy="443" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -69,19 +69,16 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="84" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;labelBackgroundColor=none;labelBorderColor=none;strokeColor=default;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="570" width="180" height="146" as="geometry"/>
+                    <mxGeometry x="610" y="570" width="180" height="116" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="nickname" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="84">
                     <mxGeometry y="26" width="180" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="86" value="account_name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="84">
+                <mxCell id="88" value="email" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="84">
                     <mxGeometry y="56" width="180" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="88" value="email" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="84">
-                    <mxGeometry y="86" width="180" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="87" value="password" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="84">
-                    <mxGeometry y="116" width="180" height="30" as="geometry"/>
+                    <mxGeometry y="86" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="152" style="edgeStyle=none;html=1;startArrow=ERzeroToOne;startFill=0;endArrow=ERone;endFill=0;exitX=0.793;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="97">
                     <mxGeometry relative="1" as="geometry">

@@ -6,8 +6,7 @@
 |-----------------------|----------------|-----------------------------|
 | email                 | string         | null: false, unique: true   |
 | encrypted_password    | string         | null: false                 |
-| nickname              | string         | null: false                 |
-| account_name          | string         | null: false, unique: true   |
+| nickname              | string         | null: false  unique: true   |
 
 
 ### Association
