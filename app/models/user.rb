@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true}
 end
