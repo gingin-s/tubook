@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+        <div class="profile-icon text-start pt-4 ps-2">
+          <%= image_tag src="user.png", alt: "mdo", width:"70", height:"70", class:"rounded-circle user-icon" %>
+        </div>
+        <div>
+          
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
