@@ -1,9 +1,24 @@
 .mypage-wrapper {
   display: flex;
 }
+.partation-border {
+  width: 40%;
+  border-bottom: 1px solid lightgray;
+}
 
 .sidebar {
   width: 300px;
   height: 100vh;
   border-right: 1px solid lightgray;
+}
+
+.avatar-file {
+  border-bottom: 1px solid blue;
+  color: blue;
+  cursor : pointer;
+}
+
+.avatar-submit {
+  font-size: 12px;
+  width: 35px;
 }
