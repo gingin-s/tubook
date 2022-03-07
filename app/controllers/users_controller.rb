@@ -14,7 +14,9 @@ class UsersController < ApplicationController
       render :index
     end
   end
+
   private
+
   def params_user_avatar
     params.require(:user).permit(:avatar)
   end
