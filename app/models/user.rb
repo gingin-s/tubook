@@ -9,5 +9,7 @@ class User < ApplicationRecord
   has_many :books, through: :book_users
   
   validates :avatar, presence: true, on: :update
-  validates :nickname, presence: true, format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true }
+  validates :nickname,  presence: true,
+                        format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true },
+                        uniqueness: {case_sensitive: true}
 end
