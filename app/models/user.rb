@@ -5,6 +5,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :book_users
+  has_many :books, through: :book_users
+
   validates :avatar, presence: true, on: :update
-  validates :nickname, presence: true, format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true }
+  validates :nickname,  presence: true,
+                        format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true },
+                        uniqueness: { case_sensitive: true }
 end

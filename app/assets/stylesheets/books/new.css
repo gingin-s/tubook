@@ -1,0 +1,26 @@
+.main-wrapper {
+  width: 100%;
+}
+
+.newbook-container {
+padding: 60px 0 0 100px;
+width: 600px;
+}
+
+.new-book-form {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.new-book-submit-button {
+  font-family: "Font Awesome 5 Free";
+  padding-left: 20px;
+}
+.form-plus-icon{
+  color: rgb(68, 89, 156);
+}
+.form-book-icon {
+  color: rgb(68, 89, 156);
+  font-size: 50px;
+  cursor: pointer;
+}
