@@ -24,10 +24,10 @@ class BooksController < ApplicationController
   def get_youtube_id
     url = params[:book][:youtube_id]
     return url if url.blank?
-    id_search = url.split('v=')[1] 
-    return url if id_search.nil?
-    id = id_search.slice(0,11)
-    return id
-  end
 
+    id_search = url.split('v=')[1]
+    return url if id_search.nil?
+
+    id_search.slice(0, 11)
+  end
 end

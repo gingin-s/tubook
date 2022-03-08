@@ -5,5 +5,5 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :description, length: { maximum: 300 }
   validates :youtube_id,  presence: true,
-                          length: { is: 11, allow_blank: true, message: "URL is not youtube video's URL"}
+                          length: { is: 11, allow_blank: true, message: "URL is not youtube video's URL" }
 end
