@@ -18,7 +18,7 @@
           <%= f.text_field :title, id: "book", placeholder: "タイトル", class: "form-control rounded-4"%>
         </div>
         <div class="new-book-description mb-4">
-          <%= f.label :description, "概要" %>
+          <%= f.label :description, "概要(300字まで)" %>
           <%= f.text_area :description, id: "description", placeholder: "Bookの概要", class: "form-control rounded-4",rows:"4" ,maxlength:"300" %>
         </div>
         <div class="d-flex justify-content-end">
