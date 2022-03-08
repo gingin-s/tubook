@@ -5,21 +5,28 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(user_book_params)
+    @user = User.find(current_user.id)
+    @book = @user.books.new(user_book_params)
     if @book.save
       redirect_to root_path
     else
       render :new
+    end
   end
 
   private
 
   def user_book_params
-    params.require(:book).permit(:title, :description).merge(user_id: current_user.id, youtube_id: get_youtube_id)
+    params.require(:book).permit(:title, :description).merge(youtube_id: get_youtube_id)
   end
 
   def get_youtube_id
-    url = params.require(:book).permit(:youtube_id)
-    url.last(11)
+    url = params[:book][:youtube_id]
+    return url if url.blank?
+    id_search = url.split('v=')[1] 
+    return url if id_search.nil?
+    id = id_search.slice(0,11)
+    return id
   end
+
 end
