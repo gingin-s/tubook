@@ -1,0 +1,23 @@
+<div class="main-content">
+  <div class="player-container">
+    <div id="player"></div>
+  </div>
+  <div class="note-container">
+    <div class="notes" id="notes">
+      <%= render partial: "notes/notes", collection: @notes %>
+    </div>
+  </div>
+</div>
+
+<div id="display-note" class="display"></div>
+
+<div id = "note-form-area">
+  <%= form_with model: [@book, @note], id:"note-form" do |f| %>
+    <a href="#" id="btn">時間の取得</a>
+    <%= f.text_field :video_time, class:"video_time", id:"video_time" %>秒
+    <div class="note-form">
+      <%= f.text_area :text, class:"note-text", id:"note-text", placeholder:"メモ内容" ,rows:"3" ,maxlength:"1000" %>
+    </div>
+      <%= f.submit "SEND", id:"send" %>
+  <% end %>
+</div>
