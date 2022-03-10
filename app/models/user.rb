@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :book_users
   has_many :books, through: :book_users
+  has_many :notes
 
   validates :avatar, presence: true, on: :update
   validates :nickname,  presence: true,

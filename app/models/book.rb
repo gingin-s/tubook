@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   has_one :book_user
   has_one :user, through: :book_user
+  has_many :notes
 
   validates :title, presence: true
   validates :description, length: { maximum: 300 }
