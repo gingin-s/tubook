@@ -3,9 +3,9 @@
   <div class="side-wrapper">
     <%= render "shared/sidebar"%> 
   </div>
-  <div class="main-wrapper d-flex">
+  <div class="new-book-wrapper d-flex">
   <%= form_with model: @book, class: 'new-book-main', local: true do |f| %>
-    <div class="newbook-container">
+    <div class="new-book-container">
       <div class="h2 new-books-head">新しいBook</div>
       <div class="new-book-form">
       <%= render "shared/error_messages", model: f.object %>
