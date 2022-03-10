@@ -21,3 +21,15 @@ window.onYouTubeIframeAPIReady = function() { // APIが読み込まれて準備�
 function onPlayerStateChange(event) {
 
 }
+
+function controlPlayer(){
+  // reloadPassages(gon.notes)
+  const btn = document.getElementById("btn");
+  btn.addEventListener("click", () => {
+    const time = player.getCurrentTime();
+    document.getElementById("video_time").value = (Math.floor(time));
+    document.getElementById("video-time-display").innerHTML = (`${Math.floor(time / 60)}:${( '00' + Math.floor(time) % 60).slice( -2 )}`);
+  });  
+};
+
+  window.addEventListener("load",controlPlayer);
