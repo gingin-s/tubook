@@ -1,0 +1,7 @@
+.note-video-time {
+  width: 80px;
+}
+
+.note-text {
+  width: calc(100% - 80px);
+}

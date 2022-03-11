@@ -1,0 +1,9 @@
+<div class="note d-flex mb-3"> 
+  <div class="note-video-time">
+    <%= link_to timecode(note.video_time), url="#", id:"deep-link-#{note.id}", data: { seconds: note.video_time }, onclick: "seekPlayer(this.dataset.seconds)" %> 
+  </div>
+  <div class="note-text border-bottom", id="text">
+    <%= note.text %>
+  </div>
+</div>
+
