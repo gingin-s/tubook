@@ -1,4 +1,4 @@
-// IFrame Player API の読み込みタグを挿入
+// IFrame Player API設定
 const tag = document.createElement('script'); // scriptタグを生成
 tag.src = "https://www.youtube.com/iframe_api";  // APIのURLを付与
 const firstScriptTag = document.getElementsByTagName('script')[0]; // 生成したタグをセット
@@ -18,13 +18,9 @@ window.onYouTubeIframeAPIReady = function() { // APIが読み込まれて準備�
   });
 };
 
-function onPlayerStateChange(event) {
-
-}
-
 //video_timeのリンクをクリックされたとき、動画をシークする
-window.seekPlayer = function(seekTime){
-  player.seekTo(seekTime);
+window.seekPlayer = function(time){
+  player.seekTo(time);
 };
 
 // noteの投稿が成功したら呼び出し
@@ -37,15 +33,45 @@ reloadNotes(notes)
 
 //notesを更新
 function reloadNotes(notes){
-  seekTimes = notes.map(item => item.video_time);
-  texts = notes.map(item => item.text);
+  noteSeekTimes = notes.map(item => item.video_time);
+  noteTexts = notes.map(item => item.text);
 };
 
+//動画の時間に応じてnoteを表示
+function onPlayerStateChange(event) { //プレーヤーの状態が変わったら実行
+  if ( event.data == YT.PlayerState.PLAYING ) { //動画が再生中であれば実行
+    const displayNote = document.getElementById("display-note");
+    // 一秒ごとに実行
+    var movieTimeCounter = setInterval(() => {
+      const videoTime = Math.floor(player.getCurrentTime());
+      const noteNum = noteSeekTimes.indexOf(videoTime);
+      //現在の再生時間にnoteが存在する場合
+      if ( noteNum != -1) {
+        const text = noteTexts[noteNum];
+        displayNote.innerHTML = text;
+        //タイマーリセット
+        clearTimeout(timerId)
+        //5秒後にtextを非表示
+        timerId = setTimeout(timer1, 5000);
+      };
+    }, 1000);
+  } else {
+    clearInterval(movieTimeCounter);
+  }
+};
+
+//textを非表示にするタイマー
+function timer1() {
+  const displayNote = document.getElementById("display-note");
+  displayNote.innerHTML = ""
+};
+
+//ページ読み込み完了時
 function controlPlayer(){
   reloadNotes(gon.notes)
   const btn = document.getElementById("btn");
+  //note作成・動画の時間の取得
   btn.addEventListener("click", () => {
-    
     const time = player.getCurrentTime();
     document.getElementById("video_time").value = (Math.floor(time));
     document.getElementById("video-time-display").innerHTML = (`${Math.floor(time / 60)}:${( '00' + Math.floor(time) % 60).slice( -2 )}`);
