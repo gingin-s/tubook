@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  
+
   def new
     @book = Book.find(params[:book_id])
     @note = Note.new
@@ -28,6 +28,16 @@ class NotesController < ApplicationController
     @book = Book.find(params[:book_id])
     @note = Note.find(params[:id])
     if @note.update(note_params)
+      @note = Note.new
+      @notes = @book.notes.order(video_time: "ASC")
+      render 'books/edit.js.erb'
+    end
+  end
+
+  def destroy
+    note = Note.find(params[:id])
+    @book = note.book
+    if note.destroy
       @note = Note.new
       @notes = @book.notes.order(video_time: "ASC")
       render 'books/edit.js.erb'
