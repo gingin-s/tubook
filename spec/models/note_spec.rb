@@ -20,15 +20,15 @@ RSpec.describe Note, type: :model do
         expect(@note.valid?).to eq(false)
       end
       it 'textが301文字以上では作成できない' do
-        @note.text= Faker::Lorem.paragraph_by_chars(number: 301, supplemental: false)
+        @note.text = Faker::Lorem.paragraph_by_chars(number: 301, supplemental: false)
         expect(@note.valid?).to eq(false)
       end
       it 'ユーザーが紐付いていないと作成できない' do
-        @note.user_id = ""
+        @note.user_id = ''
         expect(@note.valid?).to eq(false)
       end
       it 'bookが紐付いていないと作成できない' do
-        @note.book_id = ""
+        @note.book_id = ''
         expect(@note.valid?).to eq(false)
       end
     end

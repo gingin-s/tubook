@@ -4,30 +4,29 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     set_notes
-    if current_user.id == @book.user.id 
+    if current_user.id == @book.user.id
       render 'books/edit.js.erb'
     else
-      redirect_to root_path 
+      redirect_to root_path
     end
-    
   end
 
   def create
     @note = Note.new(note_params)
-      if @note.save
-        @note = Note.new
-        set_notes
-        render 'books/edit.js.erb'
-      end
+    if @note.save
+      @note = Note.new
+      set_notes
+      render 'books/edit.js.erb'
+    end
   end
 
   def edit
     @note = Note.find(params[:id])
     @book = @note.book
-    if current_user.id == @book.user.id 
-      render "edit.js.erb"
+    if current_user.id == @book.user.id
+      render 'edit.js.erb'
     else
-      redirect_to root_path 
+      redirect_to root_path
     end
   end
 
@@ -51,8 +50,8 @@ class NotesController < ApplicationController
     end
   end
 
-
   private
+
   def note_params
     params.require(:note).permit(:text, :video_time).merge(book_id: params[:book_id], user_id: current_user.id)
   end
@@ -62,6 +61,6 @@ class NotesController < ApplicationController
   end
 
   def set_notes
-    @notes = @book.notes.order(video_time: "ASC")
+    @notes = @book.notes.order(video_time: 'ASC')
   end
 end
