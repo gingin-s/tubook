@@ -37,31 +37,8 @@
       <div id="display-note" class="display-note"></div>
     </div>
 
-    <div class="add-note-wrapper">
-      <div class="note-form-area">
-      <p class="fw-bold col-3 border-bottom mb-2">Noteの追加</p>
-        <%= form_with model: [@book, @note], id:"note-form" do |f| %>
-        <%= render "shared/error_messages", model: f.object %>
-          <div class="w-100">
-            <div class="video-time-form d-flex">
-              <a id="btn"><i class="fas fa-pencil  fs-4 me-3"></i></a>
-              <div id="video-time-display"></div>
-              <%= f.text_field :video_time, id:"video_time", style:"width:8%", class:"visually-hidden"%>  :ペンをクリックで動画の時間を指定
-            </div>
-            <div class="d-flex align-items-end">
-              <div class="note-form col-11">
-                <%= f.text_area :text, class:"new-note-text", id:"new-note-text", placeholder:"Noteを記入" ,rows:"3" ,maxlength:"1000" %>
-              </div>
-              <div class="note-form-submit col-2 ps-2">
-                <label class="note-submit">
-                  <span>追加</span>
-                  <%= f.submit "追加", id:"note-submit", class:"visually-hidden" %>
-                </label>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class="add-note-wrapper" id="add-note-wrapper">
+      <%= render partial: "note_form", locals: {book: @book, note: @note} %>
     </div>
 
   </div><%#/container%>

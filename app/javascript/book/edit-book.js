@@ -27,8 +27,8 @@ window.seekPlayer = function(time){
 window.afterCreateNote = (notes) =>{
 //フォームのリセット 
 document.getElementById("video-time-display").innerHTML = "";
-document.getElementById("note-form").reset();
-reloadNotes(notes)
+controlPlayer();
+
 };
 
 //notesを更新
@@ -38,6 +38,7 @@ function reloadNotes(notes){
 };
 
 //動画の時間に応じてnoteを表示
+var movieTimeCounter, timerId;
 function onPlayerStateChange(event) { //プレーヤーの状態が変わったら実行
   if ( event.data == YT.PlayerState.PLAYING ) { //動画が再生中であれば実行
     const displayNote = document.getElementById("display-note");
@@ -74,7 +75,7 @@ function controlPlayer(){
   btn.addEventListener("click", () => {
     const time = player.getCurrentTime();
     document.getElementById("video_time").value = (Math.floor(time));
-    document.getElementById("video-time-display").innerHTML = (`${Math.floor(time / 60)}:${( '00' + Math.floor(time) % 60).slice( -2 )}`);
+    document.getElementById("video-time-display").innerHTML = (`${( '00' + Math.floor(time / 60)).slice( -2 )}:${( '00' + Math.floor(time) % 60).slice( -2 )}`);
   });  
 };
 

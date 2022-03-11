@@ -1,9 +1,14 @@
 <div class="note d-flex mb-3"> 
   <div class="note-video-time">
-    <%= link_to timecode(note.video_time), 'javascript:void(0);', id:"deep-link-#{note.id}", data: { seconds: note.video_time }, onclick: "seekPlayer(this.dataset.seconds)" %> 
+    <%= link_to timecode(note.video_time), 'javascript:void(0);', id:"deep-link-#{note.id}", data: { seconds: note.video_time }, onclick: "seekPlayer(this.dataset.seconds)", class:"text-decoration-none"%> 
   </div>
-  <div class="note-text border-bottom", id="text">
-    <%= note.text %>
-  </div>
+  <div class="note-right border-bottom">
+    <div class="note-text" id="text">
+      <%= note.text %>
+      <div>
+        <%= link_to "編集", edit_note_path(note.id), remote: true %>
+      </div>
+    </div>
+</div>
 </div>
 

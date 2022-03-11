@@ -6,10 +6,6 @@
   margin: 0 5%;
 }
 
-.container {
-
-}
-
 .book-main-wrapper {
   display: flex;
   justify-content: space-between;
@@ -110,7 +106,9 @@ a .fa-pencil  {
 }
 
 #video-time-display {
-  width: 40px;
+  text-align: center;
+  font-size: 14px;
+  width: 45px;
   border-bottom: 1px solid;
 }
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: :update
   resources :books, only: [:new, :create]
   resources :books, only: [:edit] do
-    resources :notes, only: :create
+    resources :notes, only: [:create, :update, :new]
   end
+  resources :notes, only: [:edit, :destroy]
 end
