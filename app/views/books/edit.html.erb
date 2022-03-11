@@ -41,7 +41,7 @@
     <div class="add-note-wrapper">
       <div class="note-form-area">
       <p class="fw-bold col-3 border-bottom mb-4">Noteの追加</p>
-        <%= form_with model: [@book, @note], id:"note-form", local: true do |f| %>
+        <%= form_with model: [@book, @note], id:"note-form" do |f| %>
         <%= render "shared/error_messages", model: f.object %>
           <div class="w-100">
             <div class="video-time-form d-flex">
@@ -54,8 +54,9 @@
                 <%= f.text_area :text, class:"new-note-text", id:"new-note-text", placeholder:"Noteを記入" ,rows:"3" ,maxlength:"1000" %>
               </div>
               <div class="note-form-submit col-2 ps-2">
-                <label class="note-submit" id="note-submit">追加</label>
-                <%= f.submit "追加", id:"note-submit", class:"visually-hidden" %>
+                <label class="note-submit">追加</label>
+                  <%= f.submit "追加", id:"note-submit" %>
+                </label>
               </div>
             </div>
           </div>

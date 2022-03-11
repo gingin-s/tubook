@@ -7,12 +7,9 @@ class NotesController < ApplicationController
     @book = Book.find(params[:book_id])
     @note = Note.new(note_params)
       if @note.save
-        @notes = @book.notes.order(seek_time: "ASC")
-        gon.watch.notes = @notes
-        redirect_to edit_book_path(params[:book_id])
-        # render 'books/edit.js.erb'
-      else
-        render template: "books/edit"
+        @note = Note.new(note_params)
+        @notes = @book.notes.order(video_time: "ASC")
+        render 'books/edit.js.erb'
       end
   end
 

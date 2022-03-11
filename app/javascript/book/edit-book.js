@@ -22,10 +22,30 @@ function onPlayerStateChange(event) {
 
 }
 
+//video_timeのリンクをクリックされたとき、動画をシークする
+window.seekPlayer = function(seekTime){
+  player.seekTo(seekTime);
+};
+
+// noteの投稿が成功したら呼び出し
+window.afterCreateNote = (notes) =>{
+//フォームのリセット 
+document.getElementById("video-time-display").innerHTML = "";
+document.getElementById("note-form").reset();
+reloadNotes(notes)
+};
+
+//notesを更新
+function reloadNotes(notes){
+  seekTimes = notes.map(item => item.video_time);
+  texts = notes.map(item => item.text);
+};
+
 function controlPlayer(){
-  // reloadPassages(gon.notes)
+  reloadNotes(gon.notes)
   const btn = document.getElementById("btn");
   btn.addEventListener("click", () => {
+    
     const time = player.getCurrentTime();
     document.getElementById("video_time").value = (Math.floor(time));
     document.getElementById("video-time-display").innerHTML = (`${Math.floor(time / 60)}:${( '00' + Math.floor(time) % 60).slice( -2 )}`);

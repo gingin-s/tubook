@@ -19,6 +19,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     gon.youtube_id = @book.youtube_id
     @notes = @book.notes.order(video_time: 'ASC')
+    gon.notes = @notes
     @note = Note.new
   end
 

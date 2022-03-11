@@ -1,0 +1,3 @@
+document.getElementById("notes").innerHTML = "<%= escape_javascript(render(partial: 'notes/note', collection: @notes)) %>";
+var notes = <%= @notes.to_json.html_safe %>;
+afterCreateNote(notes);
