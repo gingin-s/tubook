@@ -17,8 +17,10 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    move_to_index
     gon.youtube_id = @book.youtube_id
     @notes = @book.notes.order(video_time: 'ASC')
+    gon.notes = @notes
     @note = Note.new
   end
 
@@ -36,5 +38,9 @@ class BooksController < ApplicationController
     return url if id_search.nil?
 
     id_search.slice(0, 11)
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user.id == @book.user.id
   end
 end

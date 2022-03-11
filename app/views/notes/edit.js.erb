@@ -1,0 +1,8 @@
+document.getElementById("add-note-wrapper").innerHTML = `
+<div class="d-flex">
+  <div class="ps-2 pe-4 fw-bold">● 編集モード</div>
+  <%= link_to "キャンセル", new_book_note_path(@book.id), remote: true, class:"text-decoration-none" %>
+</div>
+<%= escape_javascript(render(partial: 'books/note_form', locals: { book: @book, note: @note })) %>`;
+
+document.getElementById("video-time-display").innerHTML = "<%= timecode(@note.video_time) %>";

@@ -1,0 +1,10 @@
+.note-video-time {
+  width: 80px;
+}
+.note-right {
+  width: calc(100% - 80px);
+}
+
+.hidden {
+  display: none;
+}

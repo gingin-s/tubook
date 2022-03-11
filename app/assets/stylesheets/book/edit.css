@@ -1,0 +1,140 @@
+.edit-book-wrapper {
+  height: 100vh;
+  padding-top: 15px;
+}
+.book-top-wrapper {
+  margin: 0 5%;
+}
+
+.book-main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* description表示・非表示 */
+.fa-angle-down {
+  cursor: pointer;
+}
+.book-top-wrapper input {
+  display: none;
+}
+.book-top-wrapper .edit-book-description {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+.book-top-wrapper input:checked ~ .edit-book-description {
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
+
+.book-left-content {
+  position: relative;
+  padding: 0px 10px;
+}
+/* プレーヤー */
+.player-wrapper {
+  padding-left: 50px;
+}
+
+.player-container {
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-player {
+  width: 100%;
+  height: 100%;
+}
+
+/* notes表示 */
+
+.book-right-content {
+  aspect-ratio: 16 / 9;
+}
+.notes-window {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  margin:0 0 0 auto;
+  border: solid 1px black;    	/* 内側の線になる一本線の枠線をひく*/
+	outline: solid 1px black;    /* 外側の線になる一本線の枠線をひく*/
+	outline-offset: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.notes {
+  height: calc(100% - 48px);
+  overflow: scroll;
+}
+
+/* 現動画時刻のnoteの表示 */
+.display-area {
+  border-bottom: 3px double black;
+  min-height: 60px;
+  width: 50%;
+}
+.display-now {
+  font-size: 20px;
+}
+.display-note {
+  padding-left: 20px;
+  font-size: 18px;
+
+}
+
+
+/* note追加 */
+.add-note-wrapper {
+  padding: 20px 0;
+}
+.note-form-area {
+  width: 100%;
+  padding: 10px 2%;
+  border: 1px solid;
+  border: solid 1px rgb(122, 1, 1);    	/* 内側の線になる一本線の枠線をひく*/
+	outline: solid 1px rgb(122, 1, 1);    /* 外側の線になる一本線の枠線をひく*/
+	outline-offset: 2px;
+  border-radius: 10px;
+}
+
+a .fa-pencil  {
+  cursor: pointer;
+  color: rgb(30, 31, 121);
+}
+
+#video-time-display {
+  text-align: center;
+  font-size: 14px;
+  width: 45px;
+  border-bottom: 1px solid;
+}
+
+.note-form {
+  border-bottom: 1px solid black;
+}
+
+.new-note-text {
+  border: none;
+  height: 50px;
+  width: 100%;
+  outline: none;
+}
+/* submit label */
+.note-submit {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px 10px;
+  border:1px solid;
+  border-radius: 10px;
+}
+.note-submit:hover {
+  background-color: darkblue;
+  color: white;
+}
+
