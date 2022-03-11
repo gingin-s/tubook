@@ -2,7 +2,6 @@
 <%= render "shared/header" %>
 
 <div class="edit-book-wrapper">
-  <div class="container">
     <div class="book-top-wrapper border-bottom ">
       <div class="edit-book-title d-flex align-items-center">
         <label for="description-show"><i class="fas fa-angle-down pe-2"></i></label>
@@ -15,32 +14,32 @@
       </div>
     </div>
 
-    <div class="book-main-wrapper mt-2">
+  <div class="container-fluid">
+    <div class="book-main-wrapper mt-4">
       <div class="book-left-content col-6">
         <div class="player-container">
           <div class="youtube-player" id="player"></div>
-        </div>
-        <div class="display-area d-flex align-items-end justify-content-start w-100">
-          <div  class="display-now text-danger">Now:</div>
-          <div id="display-note" class="display-note">あああああああああああああああああああああああいい</div>
         </div>
       </div>
 
       <div class="book-right-content col">
         <div class="notes-window">
           <h2 class="notes-info w-50 border-bottom ps-2">Notes</h2>
-              <div class="notes" id="notes">
-                <%= render partial: "notes/note", collection: @notes %>
-              </div>
+          <div class="notes" id="notes">
+            <%= render partial: "notes/note", collection: @notes %>
+          </div>
         </div>
       </div>
     </div> <%#/book-main-wrapper%>
 
-    <div class="border-bottom mt-3 border-success"></div>
+    <div class="display-area d-flex align-items-end justify-content-start">
+      <div  class="display-now text-danger ps-3">Now:</div>
+      <div id="display-note" class="display-note"></div>
+    </div>
 
     <div class="add-note-wrapper">
       <div class="note-form-area">
-      <p class="fw-bold col-3 border-bottom mb-4">Noteの追加</p>
+      <p class="fw-bold col-3 border-bottom mb-2">Noteの追加</p>
         <%= form_with model: [@book, @note], id:"note-form" do |f| %>
         <%= render "shared/error_messages", model: f.object %>
           <div class="w-100">
@@ -50,12 +49,13 @@
               <%= f.text_field :video_time, id:"video_time", style:"width:8%", class:"visually-hidden"%>  :ペンをクリックで動画の時間を指定
             </div>
             <div class="d-flex align-items-end">
-              <div class="note-form col-10">
+              <div class="note-form col-11">
                 <%= f.text_area :text, class:"new-note-text", id:"new-note-text", placeholder:"Noteを記入" ,rows:"3" ,maxlength:"1000" %>
               </div>
               <div class="note-form-submit col-2 ps-2">
-                <label class="note-submit">追加</label>
-                  <%= f.submit "追加", id:"note-submit" %>
+                <label class="note-submit">
+                  <span>追加</span>
+                  <%= f.submit "追加", id:"note-submit", class:"visually-hidden" %>
                 </label>
               </div>
             </div>
