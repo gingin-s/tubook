@@ -23,6 +23,16 @@ window.seekPlayer = function(time){
   player.seekTo(time);
 };
 
+// noteの編集・削除表示切り替え
+window.displayEdit = (id) => {
+  const noteId = document.getElementById(id);
+  if (noteId.getAttribute("style") == "display:block;") {
+    noteId.removeAttribute("style", "display:block;")
+  } else {
+    noteId.setAttribute("style", "display:block;")
+  }
+};
+
 // noteの投稿が成功したら呼び出し
 window.afterCreateNote = (notes) =>{
 //フォームのリセット 
