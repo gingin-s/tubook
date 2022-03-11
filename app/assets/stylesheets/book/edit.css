@@ -127,9 +127,9 @@ a .fa-pencil  {
 /* submit label */
 .note-submit {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 7px 10px;
+  padding: 5% 8%;
   border:1px solid;
   border-radius: 10px;
 }
