@@ -66,6 +66,12 @@
   margin-top: 2px;
   margin-bottom: 2px;
 }
+.notes-info{
+  width: 90%;
+  margin:0 0 0 auto;
+  font-size: 12px;
+  text-align: end;
+}
 
 .notes {
   height: calc(100% - 48px);
