@@ -27,6 +27,16 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_update_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 
@@ -36,6 +46,10 @@ class BooksController < ApplicationController
 
   def user_book_params
     params.require(:book).permit(:title, :description).merge(youtube_id: get_youtube_id)
+  end
+
+  def book_update_params
+    params.require(:book).permit(:title, :description)
   end
   
   def move_to_index

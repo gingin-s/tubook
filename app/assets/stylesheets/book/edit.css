@@ -7,6 +7,11 @@ padding: 60px 0 0 100px;
 width: 600px;
 }
 
+.edit-books-head {
+  width: 60%;
+  border-bottom: 1px solid;
+}
+
 .edit-book-form {
   margin-top: 40px;
   margin-left: 40px;
