@@ -1,3 +1,28 @@
-.mypage-wrapper {
+.wrapper {
+  height: 100vh;
+}
+
+
+.top_page-wrapper {
   display: flex;
+  width: 100vw;
+  height: 100%;
+}
+.main-wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+.main-container {
+  height: 100%;
+}
+.main-heading {
+  height: 50px;
+  margin: 20px 0;
+  border-bottom: 1px solid;
+}
+
+.main-heading .fa-book {
+  padding-right: 20px;
+  color: navy;
 }

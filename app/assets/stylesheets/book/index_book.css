@@ -1,0 +1,21 @@
+.books-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.book-container {
+  width: 300px;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.card-text {
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.card-title {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid;
+  overflow: hidden;
+}

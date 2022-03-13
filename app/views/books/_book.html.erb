@@ -1,0 +1,36 @@
+
+      <div class="books-wrapper">
+        <% books.each do |book| %>
+          <div class="book-container">
+            <div class="card shadow-sm aaaaaa">
+              <img src="https://img.youtube.com/vi/<%= "#{book.youtube_id}" %>/mqdefault.jpg" />
+
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="card-title">
+                    <%= book.title %>
+                  </div>
+                  <div class="card-description">
+                    <%= book.description %>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <%= link_to "View", book_path(book.id), class:"text-decoration-none text-secondary"%></button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <%= link_to "Edit", edit_book_path(book.id), class:"text-decoration-none text-secondary"%></button>
+                    </button>
+                  </div>
+                  <% if book.notes.exists? %>
+                    <small class="text-muted">最終更新 : <%= l book.notes.last.created_at, format: :date %></small>
+                  <% else %>
+                    <small class="text-muted">最終更新 : <%= l book.created_at, format: :date %></small>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+

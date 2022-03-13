@@ -1,8 +1,19 @@
 <div class="wrapper">
-  <%= render "shared/header" %>
-  <div class="mypage-wrapper">
+  <div class="header">  
+    <%= render "shared/header" %>
+  </div>
+  <div class="top_page-wrapper">
+
     <div class="side-wrapper">
-      <%= render "shared/sidebar"%> 
+      <%= render "shared/sidebar" %> 
     </div>
+
+    <div class="main-wrapper">
+      <div class="container-fluid main-container">
+      <h1 class="main-heading"><i class="fas fa-book"></i><span class="text-danger">B</span>ooks</h1>
+        <%= render partial: "books/book", locals: { books: @books } %> 
+      </div>
+    </div>
+
   </div>
 </div>

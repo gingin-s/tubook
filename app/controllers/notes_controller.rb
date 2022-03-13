@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     @note = Note.new
     set_notes
     if current_user.id == @book.user.id
-      render 'books/edit.js.erb'
+      render 'books/show.js.erb'
     else
       redirect_to root_path
     end
@@ -16,7 +16,7 @@ class NotesController < ApplicationController
     if @note.save
       @note = Note.new
       set_notes
-      render 'books/edit.js.erb'
+      render 'books/show.js.erb'
     end
   end
 
@@ -35,7 +35,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       @note = Note.new
       set_notes
-      render 'books/edit.js.erb'
+      render 'books/show.js.erb'
     end
   end
 
@@ -46,7 +46,7 @@ class NotesController < ApplicationController
       note.destroy
       @note = Note.new
       set_notes
-      render 'books/edit.js.erb'
+      render 'books/show.js.erb'
     end
   end
 
