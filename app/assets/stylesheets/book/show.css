@@ -1,4 +1,4 @@
-.edit-book-wrapper {
+.show-book-wrapper {
   height: 100vh;
   padding-top: 15px;
 }
@@ -19,14 +19,14 @@
 .book-top-wrapper input {
   display: none;
 }
-.book-top-wrapper .edit-book-description {
+.book-top-wrapper .show-book-description {
   height: 0;
   padding: 0;
   overflow: hidden;
   opacity: 0;
   transition: 0.8s;
 }
-.book-top-wrapper input:checked ~ .edit-book-description {
+.book-top-wrapper input:checked ~ .show-book-description {
   padding: 10px 0;
   height: auto;
   opacity: 1;

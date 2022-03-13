@@ -1,12 +1,11 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, except: :show
   def new
-    @user = User.find(current_user.id)
     @book = Book.new
   end
 
   def create
-    @user = User.find(current_user.id)
     @book = @user.books.new(user_book_params)
     if @book.save
       redirect_to root_path
@@ -24,12 +23,40 @@ class BooksController < ApplicationController
     @note = Note.new
   end
 
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_update_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+
+
   private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
 
   def user_book_params
     params.require(:book).permit(:title, :description).merge(youtube_id: get_youtube_id)
   end
 
+  def book_update_params
+    params.require(:book).permit(:title, :description)
+  end
+  
+  def move_to_index
+    redirect_to root_path unless current_user.id == @book.user.id
+  end
+
+  # ULLからyoutube_idを切り出し
   def get_youtube_id
     url = params[:book][:youtube_id]
     return url if url.blank?
@@ -40,7 +67,4 @@ class BooksController < ApplicationController
     id_search.slice(0, 11)
   end
 
-  def move_to_index
-    redirect_to root_path unless current_user.id == @book.user.id
-  end
 end

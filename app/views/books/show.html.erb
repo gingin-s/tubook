@@ -1,14 +1,14 @@
 <%= javascript_pack_tag 'book/application' %>
 <%= render "shared/header" %>
 
-<div class="edit-book-wrapper">
+<div class="show-book-wrapper">
     <div class="book-top-wrapper border-bottom ">
-      <div class="edit-book-title d-flex align-items-center">
+      <div class="show-book-title d-flex align-items-center">
         <label for="description-show"><i class="fas fa-angle-down pe-2"></i></label>
         <h3><%= @book.title %></h3>
       </div>
       <input type="checkbox" id="description-show"/>
-      <div class="edit-book-description d-flex align-items-end">
+      <div class="show-book-description d-flex align-items-end">
         <p class="pe-2 mb-0 text-secondary">bookの概要:</p>
         <%= @book.description %>
       </div>
@@ -43,4 +43,4 @@
     </div>
 
   </div><%#/container%>
-</div><%#/edit-book-wrapper%>
+</div><%#/show-book-wrapper%>
