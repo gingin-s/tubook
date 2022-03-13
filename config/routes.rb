@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: :update
   resources :books, only: [:new, :create]
-  resources :books, only: [:show] do
+  resources :books, only: [:show, :edit] do
     resources :notes, only: [:create, :update, :new]
   end
   resources :notes, only: [:edit, :destroy]
