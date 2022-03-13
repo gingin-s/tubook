@@ -1,1 +1,1 @@
-require("book/edit-book")
+require("book/show-book")

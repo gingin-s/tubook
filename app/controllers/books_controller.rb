@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def edit
+  def show
     @book = Book.find(params[:id])
     move_to_index
     gon.youtube_id = @book.youtube_id

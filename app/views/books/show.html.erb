@@ -24,7 +24,7 @@
 
       <div class="book-right-content col">
         <div class="notes-window">
-          <h2 class="notes-hedding w-50 border-bottom border-danger ps-2">Notes</h2>
+          <h2 class="notes-hedding w-50 border-bottom border-dark ps-2"><span class="text-danger">N</span>otes</h2>
           <div class="notes" id="notes">
             <%= render partial: "notes/note", collection: @notes %>
           </div>
@@ -34,7 +34,7 @@
     </div> <%#/book-main-wrapper%>
 
     <div class="display-area d-flex align-items-end justify-content-start">
-      <div  class="display-now text-danger ps-3">Now:</div>
+      <div  class="display-now  ps-3">Now:</div>
       <div id="display-note" class="display-note"></div>
     </div>
 
