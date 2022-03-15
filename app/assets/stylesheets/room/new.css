@@ -1,0 +1,126 @@
+.new-room-wrapper {
+  width: 100%;
+}
+
+.new-room-container {
+  margin: 40px auto ;
+  width: 80%;
+}
+/* 上部フォーム */
+.new-room-head {
+  width: 60%;
+  border-bottom: 1px solid;
+}
+.new-room-form {
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.new-room-name {
+  margin-bottom: 40px;
+}
+/* メンバー追加エリア */
+.room-member-head {
+  width: 180px;
+  border-bottom: 1px solid;
+}
+/* メンバー追加左コンテンツ */
+.new-room-member {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 320px;
+  align-items: center;
+}
+.add-member-form-area {
+  height: 100%;
+
+  display: block;
+}
+.add-member-form {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 250px;
+}
+.add-member-error {
+  color: red;
+}
+.add-member-btn {
+  padding: 20px 0 0 10px;
+  cursor: pointer;
+}
+/* メンバー追加右コンテンツ */
+.add-member-window {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+.member-info {
+  width: 60%;
+  padding-left: 10px;
+  border-bottom: 1px solid;
+}
+.add-member-lists {
+  height: 90%;
+  width: 100%;
+  padding: 10px 10px;
+  overflow: scroll;
+}
+/* 招待メンバー中身(部分テンプレート) */
+.add-member-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.member-user-avatar {
+  margin-left: 5px;
+}
+.member-user-name {
+  margin-left: 10px;
+}
+.delete-new-room-member {
+  margin:0 10px 0 auto;
+  color: lightgray;
+}
+
+.new-room-submit {
+  margin-top: 20px;
+  display: flex;
+  width: 250px;
+  border-bottom: 1px solid;
+}
+.door-submit {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: end;
+}
+
+.door-submit .door-open {
+  position: absolute;
+  left: 0;
+  top:0;
+  opacity: 0;
+}
+.door-open {
+  cursor: pointer;
+}
+.door-closed {
+  cursor: pointer;
+}
+.door-submit:hover .door-open{
+  opacity: 1;
+}
+.door-submit:hover .door-closed{
+  opacity: 0;
+}
+.man-walking {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+.man-walking:hover {
+  cursor: pointer;
+}
