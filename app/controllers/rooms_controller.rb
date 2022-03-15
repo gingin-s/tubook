@@ -3,7 +3,6 @@ class RoomsController < ApplicationController
   def new
     @user = User.find(current_user.id)
     @room = Room.new
-
   end
 
   def create
@@ -20,16 +19,16 @@ class RoomsController < ApplicationController
   def add_member_to_lists
     if User.exists?(nickname: params[:user_name])
       user = User.find_by(nickname: params[:user_name])
-      if user.avatar.file
-        user_img = "/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
-      else
-        user_img = "/assets/default-2ebaf5557392ad8670ddca8292c8e0f57477c605106977892eb415add53ef6a3.png"
-      end
+      user_img = if user.avatar.file
+                   "/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
+                 else
+                   '/assets/default-2ebaf5557392ad8670ddca8292c8e0f57477c605106977892eb415add53ef6a3.png'
+                 end
       error_message = "#{params[:user_name]}さんは追加済みです"
-      render json:{ user_id: user.id, user_name: user.nickname, user_img: user_img, error_message: error_message  }
+      render json: { user_id: user.id, user_name: user.nickname, user_img: user_img, error_message: error_message }
     else
       error_message = "#{params[:user_name]}は存在しません"
-      render json:{ error_message: error_message, form_value: params[:user_name] }
+      render json: { error_message: error_message, form_value: params[:user_name] }
     end
   end
 
@@ -38,5 +37,4 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, user_ids: [])
   end
-
 end

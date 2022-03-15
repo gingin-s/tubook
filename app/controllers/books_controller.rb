@@ -36,8 +36,6 @@ class BooksController < ApplicationController
     end
   end
 
-
-
   private
 
   def set_user
@@ -51,7 +49,7 @@ class BooksController < ApplicationController
   def book_update_params
     params.require(:book).permit(:title, :description)
   end
-  
+
   def move_to_index
     redirect_to root_path unless current_user.id == @book.user.id
   end
@@ -66,5 +64,4 @@ class BooksController < ApplicationController
 
     id_search.slice(0, 11)
   end
-
 end

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @books = @user.books.order(created_at: "DESC").includes(:notes)
+    @books = @user.books.order(created_at: 'DESC').includes(:notes)
   end
 
   def update
