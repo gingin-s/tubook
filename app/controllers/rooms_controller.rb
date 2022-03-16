@@ -1,8 +1,12 @@
 class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :set_room_data
   def new
     @user = User.find(current_user.id)
     @room = Room.new
+  end
+  
+  def show
   end
 
   def create
@@ -32,15 +36,29 @@ class RoomsController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(current_user.id)
-    @room = Room.find(params[:id])
-    @books = @room.books
+
+  def change_avatar
+    if @room.update_attributes(avatar: params_room_avatar[:avatar])
+      redirect_to room_path(@room)
+    else
+      @room = Room.find(@room)
+      render :index
+    end
   end
 
   private
-
+  def set_room_data
+    @user = User.find(current_user.id)
+    @room = Room.find(params[:id])
+    @books = @room.books.order(created_at: 'DESC').includes(:notes)
+  end
+  
   def room_params
     params.require(:room).permit(:name, user_ids: [])
   end
+
+  def params_room_avatar
+    params.require(:room).permit(:avatar)
+  end
+
 end
