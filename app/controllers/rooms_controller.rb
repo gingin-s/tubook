@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_room_data
+  before_action :set_room_data, only:[:show, :change_avatar]
+  before_action :move_to_root, only: [:show, :remove_member, :change_avatar]
   def new
     @user = User.find(current_user.id)
     @room = Room.new
@@ -11,7 +12,6 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    binding.pry
     if @room.save
       redirect_to room_path(@room.id)
     else
@@ -46,6 +46,17 @@ class RoomsController < ApplicationController
     end
   end
 
+  def remove_member
+    room_user = RoomUser.where(room_id: params[:id]).find_by(user_id: params[:user_id])
+    room_user.destroy
+    if RoomUser.where(room_id: params[:id]) == []
+      Room.find(params[:id]).destroy
+      redirect_to root_path
+    else
+      redirect_to room_path(params[:id])
+    end
+  end
+
   private
   def set_room_data
     @user = User.find(current_user.id)
@@ -59,6 +70,12 @@ class RoomsController < ApplicationController
 
   def params_room_avatar
     params.require(:room).permit(:avatar)
+  end
+
+  def move_to_root
+    unless RoomUser.where(room_id: params[:id]).find_by(user_id: current_user.id)
+      redirect_to root_path
+    end
   end
 
 end

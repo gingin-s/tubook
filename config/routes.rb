@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     member do
       patch "change_avatar"
+      delete "remove_member"
     end
   end
   resources :books, only: [:new, :create]

@@ -1,0 +1,17 @@
+
+/* サイドバーメンバー */
+.member-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.member-user-avatar {
+  margin-left: 5px;
+}
+.member-user-name {
+  margin-left: 10px;
+}
+.delete-room-member {
+  margin:0 10px 0 auto;
+  color: lightgray;
+}

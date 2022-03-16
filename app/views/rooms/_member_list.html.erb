@@ -1,4 +1,4 @@
-<div id=<%="add-member-list-#{user.id}"%> class="add-member-list">
+<div class="member-list">
   <div>-</div>
   <div class="member-user-avatar">
     <% if user.avatar? %>
@@ -9,10 +9,9 @@
   </div>
   <div class="member-user-name">
     <%= user.nickname %>
-    <input placeholder="アカウント名" class="visually-hidden" type="text" name="room[user_ids][]" value=<%= user.id%> >
   </div>
-  <div class="delete-new-room-member">
-  <%= link_to 'javascript:void(0);', data: { list: "add-member-list-#{user.id}" }, onclick: "deleteNewRoomMember(this.dataset.list)" do %> 
+  <div class="delete-room-member">
+  <%= link_to remove_member_room_path(@room.id, user_id: user.id), method: :delete do %> 
     <i class="far fa-times-circle text-secondary"></i>
   <% end %>
   </div>

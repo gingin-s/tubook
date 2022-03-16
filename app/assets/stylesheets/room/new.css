@@ -69,7 +69,7 @@
   padding: 10px 10px;
   overflow: scroll;
 }
-/* 招待メンバー中身(部分テンプレート) */
+/* 招待メンバー中身 */
 .add-member-list {
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@
   margin:0 10px 0 auto;
   color: lightgray;
 }
-
+/* room作成ボタン */
 .new-room-submit {
   margin-top: 20px;
   display: flex;
