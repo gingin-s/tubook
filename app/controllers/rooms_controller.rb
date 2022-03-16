@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_room_data, only:[:show, :change_avatar]
-  before_action :move_to_root, only: [:show, :remove_member, :change_avatar]
+  before_action :set_room_data, only:[:show, :change_avatar, :add_member]
+  before_action :move_to_root, only: [:show, :remove_member, :add_member, :change_avatar]
   def new
     @user = User.find(current_user.id)
     @room = Room.new
@@ -57,11 +57,32 @@ class RoomsController < ApplicationController
     end
   end
 
+  def add_member
+    if User.exists?(user_name_params)
+      user = User.find_by(user_name_params)
+      if RoomUser.where(room_id: params[:id]).find_by(user_id: user.id)
+        @error_message = "#{user_name_params[:nickname]}さんは追加済みです"
+        render :show
+      else
+        RoomUser.create(room_id: params[:id], user_id: user.id)
+        redirect_to room_path(@room.id)
+      end
+    else
+      @error_message = "#{user_name_params[:nickname]}は存在しません"
+      @error_message = "ユーザー名を入力してください" if user_name_params[:nickname].blank?
+      render :show
+    end
+  end
+
   private
   def set_room_data
     @user = User.find(current_user.id)
     @room = Room.find(params[:id])
     @books = @room.books.order(created_at: 'DESC').includes(:notes)
+  end
+
+  def user_name_params
+    params.require(:room).permit(:nickname)
   end
   
   def room_params

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     member do
       patch "change_avatar"
+      patch "add_member"
       delete "remove_member"
     end
   end

@@ -36,14 +36,19 @@
 position: absolute;
 top: 5px;
 right: 5px;
-padding: 2px;
 border: 1px solid gray;
 border-radius: 3px;
 font-size: 12px;
-
 }
 
 .exit-room {
 text-decoration: none;
 color: gray;
+padding: 2px;
+}
+.side-room-right:hover {
+  background-color: gray;
+  }
+.exit-room:hover {
+  color: white;
 }

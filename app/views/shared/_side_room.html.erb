@@ -17,8 +17,6 @@
     </div>
   <% end %>
   <div class="side-room-right">
-    <%# <div class="exit-room"> %>
-      <%= link_to "退出", room_path(room.id), class:"exit-room" %>
-    <%# </div> %>
+      <%= link_to "退出", remove_member_room_path(room.id, user_id: current_user.id), method: :delete, class:"exit-room" %>
   </div>
 </div>
