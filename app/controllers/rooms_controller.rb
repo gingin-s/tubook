@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   before_action :move_to_root, only: [:show, :remove_member, :add_member, :change_avatar]
   def new
     @user = User.find(current_user.id)
+    @rooms = @user.rooms
     @room = Room.new
   end
   
@@ -74,6 +75,8 @@ class RoomsController < ApplicationController
     end
   end
 
+
+  
   private
   def set_room_data
     @user = User.find(current_user.id)

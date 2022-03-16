@@ -40,6 +40,7 @@ class BooksController < ApplicationController
 
   def set_user
     @user = User.find(current_user.id)
+    @rooms = @user.rooms
   end
 
   def user_book_params
