@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       post "add_member_to_lists"
     end
+    member do
+      patch "change_avatar"
+    end
   end
   resources :books, only: [:new, :create]
   resources :books, only: [:show, :edit, :update] do
