@@ -32,6 +32,12 @@ class RoomsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(current_user.id)
+    @room = Room.find(params[:id])
+    @books = @room.books
+  end
+
   private
 
   def room_params

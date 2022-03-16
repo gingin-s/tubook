@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @books = @user.books.order(created_at: 'DESC').includes(:notes)
+    @rooms = @user.rooms.all
   end
 
   def update

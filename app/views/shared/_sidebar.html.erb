@@ -28,10 +28,11 @@
         </div>
       </div>
     </div>
-    <div class="fw-bold pt-4 partition-border">Rooms</div>
+
+    <div class="fw-bold pt-4 mb-3 partition-border">Rooms</div>
     <% if @rooms %>
-    <div class="rooms">
-      
+    <div class="side-rooms">
+      <%= render partial:"shared/side_room", collection: @rooms, as: "room" %>
     </div>
     <% end %>
   </div>

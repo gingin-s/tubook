@@ -27,3 +27,7 @@
   background-color: gray;
   color: white;
 }
+.side-rooms {
+  overflow: scroll;
+  height: 460px;
+}
