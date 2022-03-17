@@ -2,11 +2,23 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, except: :show
   def new
+    # フォームの送信先を条件分岐
+    if params[:room_id]
+      @room = Room.find(params[:room_id]) if params[:room_id]
+      @url = room_books_path(@room.id)
+    else
+      @url = books_path
+    end
     @book = Book.new
   end
 
   def create
-    @book = @user.books.new(user_book_params)
+    if params[:room_id]
+      @room = Room.find(params[:room_id])
+      @book = @room.books.new(book_params)
+    else
+      @book = @user.books.new(book_params)
+    end
     if @book.save
       redirect_to root_path
     else
@@ -43,7 +55,7 @@ class BooksController < ApplicationController
     @rooms = @user.rooms
   end
 
-  def user_book_params
+  def book_params
     params.require(:book).permit(:title, :description).merge(youtube_id: get_youtube_id)
   end
 

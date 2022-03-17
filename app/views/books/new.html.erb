@@ -4,12 +4,16 @@
   </div>
   <div class="top_page-wrapper">
     <div class="side-wrapper">
-      <%= render "shared/sidebar" %> 
+      <% if @room %>
+        <%= render "shared/rooms_sidebar" %> 
+      <% else %>
+        <%= render "shared/sidebar" %> 
+      <% end %>
     </div>
   
     <div class="new-book-wrapper">
       <div class="new-book-container">
-      <%= form_with model: @book, class: 'new-book-main', local: true do |f| %>
+        <%= form_with model: @book, url: @url, class: 'new-book-main', local: true do |f| %>
         <div class="h2 new-book-head">新しい<span class="text-danger">B</span>ook</div>
         <div class="new-book-form">
         <%= render "shared/error_messages", model: f.object %>

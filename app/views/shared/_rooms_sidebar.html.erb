@@ -32,12 +32,12 @@
     <div class=" d-flex fw-bold pt-3 mb-3 partition-border">New Book</div>
     <div class="room-new-book">このRoomで新しいBookを作る</div>
     <div class="room-new-book-btn">
-      <%= link_to "作成", room_path(@room.id), class:"room-new-book-link" %>
+      <%= link_to "作成", new_room_book_path(@room.id), class:"room-new-book-link" %>
     </div>
     <%# メンバー管理 %>
     <div class="fw-bold pt-3 mb-3 partition-border">Members</div>
     <div class="side-room-member-list">
-      <%= render partial:"member_list", collection: @room.users, as: "user" %>
+      <%= render partial:"rooms/member_list", collection: @room.users, as: "user" %>
     </div>
     
     <%= form_with model: @room, url:add_member_room_path(@room.id), local: true do |f| %>
