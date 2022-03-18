@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :books, only: [:new, :create]
-  resources :books, only: [:show, :edit, :update] do
+  resources :books, only: [:show, :edit, :update, :destroy] do
     resources :notes, only: [:create, :update, :new]
   end
   resources :notes, only: [:edit, :destroy]

@@ -1,9 +1,9 @@
 class Book < ApplicationRecord
-  has_one :book_user
+  has_one :book_user, dependent: :destroy
   has_one :user, through: :book_user
-  has_one :book_room
+  has_one :book_room, dependent: :destroy
   has_one :room, through: :book_room
-  has_many :notes
+  has_many :notes, dependent: :destroy
 
   validates :title, presence: true
   validates :description, length: { maximum: 300 }
