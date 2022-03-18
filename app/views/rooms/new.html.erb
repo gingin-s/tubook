@@ -11,7 +11,7 @@
   
     <div class="new-room-wrapper">
       <div class="new-room-container">
-        <%= form_with model: @room, class: 'new-room-main', local: true do |f| %>
+        <%= form_with model: @new_room, class: 'new-room-main', local: true do |f| %>
           <div class="h2 new-room-head">新しい<span class="text-danger">R</span>oom</div>
           <div class="new-room-form">
             <%= render "shared/error_messages", model: f.object %>

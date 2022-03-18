@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
   def new
     @user = User.find(current_user.id)
     @rooms = @user.rooms
-    @room = Room.new
+    @new_room = Room.new
   end
   
   def show
