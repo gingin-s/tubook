@@ -8,6 +8,10 @@
   margin-bottom: 40px;
 }
 
+.card-bod {
+  padding:16px 16px 0 16px
+}
+
 .card-text {
   height: 100px;
   overflow: hidden;
@@ -18,4 +22,12 @@
   height: 30px;
   border-bottom: 1px solid;
   overflow: hidden;
+}
+
+.body-link {
+  text-decoration: none;
+  color: black;
+}
+.body-link:hover {
+  color: black
 }
