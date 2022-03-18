@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(version: 2022_03_18_100418) do
 
   create_table "chat_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
-    t.bigint "book_id", null: false
+    t.bigint "room_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id"], name: "index_chat_messages_on_book_id"
+    t.index ["room_id"], name: "index_chat_messages_on_room_id"
     t.index ["user_id"], name: "index_chat_messages_on_user_id"
   end
 
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2022_03_18_100418) do
   add_foreign_key "book_rooms", "rooms"
   add_foreign_key "book_users", "books"
   add_foreign_key "book_users", "users"
-  add_foreign_key "chat_messages", "books"
+  add_foreign_key "chat_messages", "rooms"
   add_foreign_key "chat_messages", "users"
   add_foreign_key "notes", "books"
   add_foreign_key "notes", "users"

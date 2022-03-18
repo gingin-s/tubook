@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :notes
   has_many :room_users
   has_many :rooms, through: :room_users
+  has_many :chat_messages
 
   validates :avatar, presence: true, on: :update
   validates :nickname,  presence: true,
