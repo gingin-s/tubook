@@ -36,6 +36,9 @@ class BooksController < ApplicationController
     @notes = @book.notes.order(video_time: 'ASC')
     gon.notes = @notes
     @note = Note.new
+    if @book.room
+      @room = @book.room
+    end
   end
 
   def edit
