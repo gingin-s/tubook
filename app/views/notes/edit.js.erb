@@ -6,3 +6,4 @@ document.getElementById("add-note-wrapper").innerHTML = `
 <%= escape_javascript(render(partial: 'books/note_form', locals: { book: @book, note: @note })) %>`;
 
 document.getElementById("video-time-display").innerHTML = "<%= timecode(@note.video_time) %>";
+controlPlayer()
