@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, except: :show
-  before_action :set_book, only: [:show, :edit, :create]
-  before_action :move_to_index, only: [:show, :edit, :create]
+  before_action :set_book, only: [:show, :edit]
+  before_action :move_to_index, only: [:show, :edit]
   def new
     # bookの所属先がroomの場合
     if params[:room_id]
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
       @book = @user.books.new(book_params)
     end
     if @book.save
-      redirect_to book_path
+      redirect_to book_path(@book)
     else
       render :new
     end
