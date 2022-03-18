@@ -1,0 +1,74 @@
+<%= javascript_pack_tag 'room/application' %>
+
+<div class="wrapper">
+  <div class="header">  
+    <%= render "shared/header" %>
+  </div>
+  <div class="top_page-wrapper">
+    <div class="side-wrapper">
+      <%= render "shared/sidebar" %> 
+    </div>
+  
+    <div class="new-room-wrapper">
+      <div class="new-room-container">
+        <%= form_with model: @room, class: 'new-room-main', local: true do |f| %>
+          <div class="h2 new-room-head">新しい<span class="text-danger">R</span>oom</div>
+          <div class="new-room-form">
+            <%= render "shared/error_messages", model: f.object %>
+            <div class="new-room-name">
+              <div class="new-room-name-label">
+                <%= f.label :name, "Roomの名前" %>
+              </div>
+              <%= f.text_field :name, id: "room_name", placeholder: "ルーム名", class: "form-control rounded-4", autofocus: true %>
+            </div>
+            <div class="room-member-head">Roomメンバー</div>
+            <div class="new-room-member">
+              <div class="add-member-form-area">
+
+                <div class="add-member-form">
+                  <div class="add-member-name-form" id="add-member-name-form">招待するアカウント名
+                    <input id="add_member" placeholder="アカウント名" class="form-control rounded-4" autofocus="autofocus" type="text">
+                  <div id="add-member-error" class="add-member-error"></div><%# エラーメッセージのターゲット %>
+                  </div>
+                  <div class="add-member-btn" id="add-member-btn">
+                      <i class="fas fa-plus-circle fa-2x text-primary"></i>
+                  </div>
+                </div>
+
+              </div>
+
+              <i class="fas fa-angle-double-right fa-2x"></i>
+
+              <div class="add-member-window">
+                <div class="member-info">members</div>
+                <div class="add-member-lists" id="add-member-lists">
+                  <div class="member-current-user hidden">
+                    <input class="visually-hidden" id=<%="add-member-list-#{current_user.id}"%> type="text" name="room[user_ids][]" value=<%= current_user.id%> >
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="new-room-submit">
+            <div class="door-submit">  
+              <div class="door-closed">
+                <i class="fas fa-door-closed fa-3x text-primary"></i>
+              </div>
+              <label>
+                <div class="door-open">
+                    <i class="fas fa-door-open fa-3x text-primary"></i>
+                    <%= f.button "作成", type: "button", onclick: "submit()", class:"visually-hidden" %>
+                </div>
+                <div class="man-walking">
+                  <i class="fas fa-walking fa-3x "></i>
+                </div>
+              </label>
+            </div>
+          <h6 class="text-dark">Roomを作成</h6>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>

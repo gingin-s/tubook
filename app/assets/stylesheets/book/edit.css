@@ -3,8 +3,8 @@
 }
 
 .edit-book-container {
-padding: 60px 0 0 100px;
-width: 600px;
+  margin: 60px auto;
+  width: 70%;
 }
 
 .edit-books-head {

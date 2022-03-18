@@ -1,0 +1,3 @@
+console.log("aaa")
+const html = "<%= escape_javascript(render(partial: 'rooms/member_list', locals: { user: @user })) %>";
+const memberLists = document.getElementById("add-member-lists").insertAdjacentHTML("beforeend", html);

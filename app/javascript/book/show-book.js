@@ -37,8 +37,8 @@ window.displayEdit = (id) => {
 window.afterCreateNote = (notes) =>{
 //フォームのリセット 
 document.getElementById("video-time-display").innerHTML = "";
-controlPlayer();
-
+controlPlayer;
+reloadNotes(notes);
 };
 
 //notesを更新
@@ -79,7 +79,6 @@ function timer1() {
 
 //ページ読み込み完了時
 function controlPlayer(){
-  reloadNotes(gon.notes)
   const btn = document.getElementById("btn");
   //note作成・動画の時間の取得
   btn.addEventListener("click", () => {
@@ -90,3 +89,4 @@ function controlPlayer(){
 };
 
   window.addEventListener("load",controlPlayer);
+  window.addEventListener("load",reloadNotes(gon.notes));

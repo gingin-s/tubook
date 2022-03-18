@@ -1,0 +1,22 @@
+<div class="side-room">
+  <%= link_to room_path(room.id), class:"side-room-link" do %>
+    <div class="side-room-left">
+      <div class="side-room-name">
+        <%= room.name %>
+      </div>
+      <div class="side-room-members-wrapper">
+        <p>members:</p>
+        <div class="side-room-members">
+          <% room.users.each do |user|%>
+          <div class="side-room-member">
+            <%= user.nickname %> /
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="side-room-right">
+      <%= link_to "退出", remove_member_room_path(room.id, user_id: current_user.id), method: :delete, class:"exit-room" %>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.side-room {
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.side-room-link {
+  text-decoration: none;
+}
+.side-room-left {
+  color: black;
+  padding: 5px ;
+  width: 270px;
+}
+.side-room-name {
+  width: 100%;
+  border-bottom: 1px solid;
+  font-size: 18px;
+  font-weight: bold;
+}
+.side-room-members-wrapper p {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 0;
+}
+.side-room-members {
+  display: flex;
+}
+.side-room-member {
+  padding-left: 5px;
+  overflow: scroll;
+}
+
+.side-room-right {
+position: absolute;
+top: 5px;
+right: 5px;
+border: 1px solid gray;
+border-radius: 3px;
+font-size: 12px;
+}
+
+.exit-room {
+text-decoration: none;
+color: gray;
+padding: 2px;
+}
+.side-room-right:hover {
+  background-color: gray;
+  }
+.exit-room:hover {
+  color: white;
+}

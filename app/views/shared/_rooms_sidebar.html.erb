@@ -1,0 +1,58 @@
+<div class="sidebar">
+  <div class="container">
+    <div class=" pt-4 fw-bold partition-border">Room Plofile</div>
+    <div class="d-flex justify-content-between pt-4 w-100">
+      <div class="profile-icon ms-2">
+        <% if @room.avatar? %>
+          <%= image_tag @room.avatar.url, alt: "mdo", width:"70", height:"70", class:"rounded-circle user-icon" %>
+        <% else %>
+          <%= image_tag "default.png", alt: "mdo", width:"70", height:"70", class:"rounded-circle user-icon" %>
+        <% end %>
+        <div class="text-center"><%= @room.name %></div>
+      </div>
+      <div class="d-block w-100 ps-5 pt-4">
+        <div class="fs-6 ">画像の編集</div>
+        <%= form_with model: @room, url:change_avatar_room_path(@room.id), multipart: true, local: true do |f| %>
+        <div class="d-flex justify-content-start pt-3">
+          <div class="button-wrapper">
+              <label class="form-avatar" id="user_avatar">
+              <span class="avatar-file">画像を選択</span>
+              <%= f.file_field :avatar, class:"visually-hidden" %></label>
+              <%= f.text_field :name, class:"visually-hidden" %>
+          </div>
+          <div class="ps-3">
+            <%= f.submit "更新", class:"avatar-submit" %>
+            
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%# ブック作成リンク %>
+    <div class=" d-flex fw-bold pt-3 mb-3 partition-border">New Book</div>
+    <div class="room-new-book">このRoomで新しいBookを作る</div>
+    <div class="room-new-book-btn">
+      <%= link_to "作成", new_room_book_path(@room.id), class:"room-new-book-link" %>
+    </div>
+    <%# メンバー管理 %>
+    <div class="fw-bold pt-3 mb-3 partition-border">Members</div>
+    <div class="side-room-member-list">
+      <%= render partial:"rooms/member_list", collection: @room.users, as: "user" %>
+    </div>
+    
+    <%= form_with model: @room, url:add_member_room_path(@room.id), local: true do |f| %>
+    <%= f.label :nickname, "メンバーを追加"%>
+    <div class="side-add-member">
+      <div class="side- add-member-field">
+        <%= f.text_field :nickname, placeholder: "ユーザー名", class: "form-control rounded-4", id: "room_user_name" %>
+      </div>
+      <div class="side-add-member-submit">
+        <%= f.submit "追加" %>
+      </div>
+    </div>
+    <div class="error-message">
+      <%= @error_message if @error_message %>
+    </div>
+    <% end %>
+  </div>
+</div>

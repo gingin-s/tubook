@@ -1,0 +1,74 @@
+/* 新しいbookの作成 */
+.room-new-book-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 50px;
+  margin-top: 10px;
+  background-color: blue;
+  border-radius: 5px;
+  text-align: center;
+}
+.room-new-book-link {
+  text-decoration: none;
+  color: white;
+}
+.room-new-book-link:hover {
+  color: white;
+}
+
+
+/* サイドバーメンバー */
+.side-room-member-list {
+  height: 220px;
+  overflow: scroll;
+}
+.member-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.member-user-avatar {
+  margin-left: 5px;
+}
+.member-user-name {
+  margin-left: 10px;
+}
+.delete-room-member {
+  margin:0 10px 0 auto;
+  color: lightgray;
+}
+.delete-myself {
+  border: 1px solid gray;
+  border-radius: 3px;
+  font-size: 12px;
+}
+  
+.exit-room {
+text-decoration: none;
+color: gray;
+padding: 2px;
+}
+.delete-myself :hover {
+  background-color: gray;
+  }
+.exit-room:hover {
+  color: white;
+}
+
+.side-add-member {
+  display: flex;
+}
+.side-add-member-submit {
+  height: 100%;
+  padding:6px;
+  margin-left: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.side-add-member-submit:hover {
+  color: white;
+  background-color: gray;
+}
+
