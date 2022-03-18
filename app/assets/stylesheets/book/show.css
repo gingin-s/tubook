@@ -6,6 +6,7 @@
   margin: 0 5%;
 }
 
+
 .book-main-wrapper {
   display: flex;
   justify-content: space-between;
@@ -49,6 +50,17 @@
   width: 100%;
   height: 100%;
 }
+/* レスポンシブ化用 */
+/* @media (max-width: 1024px) {
+  .book-main-wrapper {
+    display: block;
+    height: 100%;
+  }
+  .book-left-content {
+    width: 90%;
+    height: 100%;
+  }
+} */
 
 /* notes表示 */
 
@@ -99,13 +111,22 @@
   padding: 20px 0;
 }
 .note-form-area {
-  width: 100%;
+  width: 95%;
+  margin: auto;
   padding: 10px 2%;
   border: 1px solid;
   border: solid 1px rgb(122, 1, 1);    	/* 内側の線になる一本線の枠線をひく*/
 	outline: solid 1px rgb(122, 1, 1);    /* 外側の線になる一本線の枠線をひく*/
 	outline-offset: 2px;
   border-radius: 10px;
+}
+.note-form-container {
+  width: 80%;
+}
+
+.video-time-form {
+  width: 80%;
+
 }
 
 .video-time-form .fa-pencil  {
@@ -122,6 +143,7 @@
 
 .note-form {
   border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .new-note-text {
@@ -132,10 +154,13 @@
 }
 /* submit label */
 .note-submit {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 40px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  padding: 5% 8%;
   border:1px solid;
   border-radius: 10px;
 }

@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="container">
-    <div class=" pt-4 fw-bold partition-border">Room Plofile</div>
+    <div class=" pt-4 fw-bold partition-border"><span class="text-danger">R</span>oom Plofile</div>
     <div class="d-flex justify-content-between pt-4 w-100">
       <div class="profile-icon ms-2">
         <% if @room.avatar? %>
@@ -29,13 +29,13 @@
       </div>
     </div>
     <%# ブック作成リンク %>
-    <div class=" d-flex fw-bold pt-3 mb-3 partition-border">New Book</div>
+    <div class=" d-flex fw-bold pt-3 mb-3 partition-border"><span class="text-danger">N</span>ew Book</div>
     <div class="room-new-book">このRoomで新しいBookを作る</div>
     <div class="room-new-book-btn">
       <%= link_to "作成", new_room_book_path(@room.id), class:"room-new-book-link" %>
     </div>
     <%# メンバー管理 %>
-    <div class="fw-bold pt-3 mb-3 partition-border">Members</div>
+    <div class="fw-bold pt-3 mb-3 partition-border"><span class="text-danger">M</span>embers</div>
     <div class="side-room-member-list">
       <%= render partial:"rooms/member_list", collection: @room.users, as: "user" %>
     </div>

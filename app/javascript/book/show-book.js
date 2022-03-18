@@ -33,12 +33,12 @@ window.displayEdit = (id) => {
   }
 };
 
-// noteの投稿が成功したら呼び出し
+// noteの投稿・編集モード後呼び出し
 window.afterCreateNote = (notes) =>{
-//フォームのリセット 
-document.getElementById("video-time-display").innerHTML = "";
-controlPlayer;
+//notes更新
 reloadNotes(notes);
+//時間取得ボタン有効化
+controlPlayer();
 };
 
 //notesを更新
@@ -77,8 +77,8 @@ function timer1() {
   displayNote.innerHTML = ""
 };
 
-//ページ読み込み完了時
-function controlPlayer(){
+//時間取得ボタンの有効化
+window.controlPlayer =() => {
   const btn = document.getElementById("btn");
   //note作成・動画の時間の取得
   btn.addEventListener("click", () => {

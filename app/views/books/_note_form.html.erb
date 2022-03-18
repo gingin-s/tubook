@@ -1,21 +1,23 @@
 <div class="note-form-area">
   <p class="fw-bold col-3 border-bottom mb-2">Noteの追加</p>
   <%= form_with model: [book, note], id:"note-form" do |f| %>
-    <div class="w-100">
-      <div class="video-time-form d-flex">
-        <a id="btn"><i class="fas fa-pencil  fs-4 me-3"></i></a>
-        <div id="video-time-display"></div>
-        <%= f.text_field :video_time, id:"video_time", style:"width:8%", class:"visually-hidden"%>  :ペンをクリックで動画の時間を指定
-      </div>
-      <div class="d-flex align-items-end">
-        <div class="note-form col-10">
-          <%= f.text_area :text, class:"new-note-text", id:"new-note-text", placeholder:"Noteを記入" ,rows:"3" ,maxlength:"1000", autofocus: true %>
+    <div class=" d-flex w-100 justify-content-center mx-auto">
+      <div class="d-block mx-auto note-form-container">
+        <div class="video-time-form d-flex">
+          <a id="btn"><i class="fas fa-pencil  fs-4 me-3"></i></a>
+          <div id="video-time-display"></div>
+          <%= f.text_field :video_time, id:"video_time", style:"width:8%", class:"visually-hidden"%>  :ペンをクリックで動画の時間を指定
         </div>
-        <div class="note-form-submit col-2 ps-2">
-          <label class="note-submit">
-            <span>追加</span>
-            <%= f.submit "追加", id:"note-submit", class:"visually-hidden" %>
-          </label>
+        <div class="d-flex align-items-end justify-content-center w-100">
+          <div class="note-form">
+            <%= f.text_area :text, class:"new-note-text", id:"new-note-text", placeholder:"Noteを記入" ,rows:"3" ,maxlength:"1000", autofocus: true %>
+          </div>
+          <div class="note-form-submit ps-2">
+            <label class="note-submit">
+              <div class="text-center w-100">追加</div>
+              <%= f.submit "追加", id:"note-submit", class:"visually-hidden" %>
+            </label>
+          </div>
         </div>
       </div>
     </div>
