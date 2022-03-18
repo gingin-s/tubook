@@ -4,11 +4,7 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     set_notes
-    if current_user.id == @book.user.id
-      render 'books/show.js.erb'
-    else
-      redirect_to root_path
-    end
+    render 'books/show.js.erb'
   end
 
   def create
@@ -23,10 +19,8 @@ class NotesController < ApplicationController
   def edit
     @note = Note.find(params[:id])
     @book = @note.book
-    if current_user.id == @book.user.id
+    if current_user.id == @note.user_id
       render 'edit.js.erb'
-    else
-      redirect_to root_path
     end
   end
 
