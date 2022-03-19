@@ -1,0 +1,106 @@
+.chat-window {
+  margin-top: 20px ;
+  height: 500px;
+  width: 100%;
+  border: 1px solid;
+  outline: solid 1px black;    /*外側の線になる一本線の枠線をひく */
+  outline-offset: 2px;
+  border-radius: 10px;
+  background-color: rgb(219, 237, 250);
+  position: relative;
+}
+.chat-room-name{
+  font-weight: bold;
+  margin-left: 10px;
+}
+/* メッセージ */
+.chat-contents {
+  margin: 5px 5px;
+  height: 80%;
+  overflow: scroll;
+}
+.chat-content {
+  display: flex;
+}
+.chat-content.left {
+  flex-direction: row;
+}
+.chat-content.right {
+  flex-direction: row-reverse;
+}
+
+.chat-body {
+  margin: 5px 5px 16px; /* 上 左右 下のマージン */
+  max-width: 80%;
+}
+
+.chat-user {
+  font-size: 10px;
+  display: flex;
+}
+.chat-user.left {
+  flex-direction: row;
+}
+.chat-user.right {
+  flex-direction: row-reverse;
+}
+
+.chat-message {
+  font-size: 14px;
+  background-color: white;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative; /* 三角の位置を固定するために設定 */
+  padding: 8px 15px; /* ふきだし内の余白 */
+  text-align: left; 
+}
+
+.right .chat-message {
+  background-color: rgb(85, 218, 85);
+}
+
+.chat-message::after {
+  content: '';
+  border: 14px solid transparent;
+  
+  position: absolute;
+  top: 0;
+}
+.left .chat-message::after { /* 左側からの三角の位置 */
+  left: -10px;
+  border-top-color: white;
+}
+.right .chat-message::after { /* 右側からの三角の位置 */
+  right: -10px;
+  border-top-color: rgb(85, 218, 85);
+}
+
+
+
+
+
+/* フォーム */
+.chat-form {
+  margin:0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+}
+.message-form {
+  width: 100%;
+  /* margin-bottom: 10px; */
+}
+.chat-submit {
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 38px;
+  color: rgb(21, 134, 226);
+  transform: scaleX(-1);
+}
+.chat-submit label {
+  cursor: pointer;
+}
