@@ -1,3 +1,11 @@
 .user-icon {
   background-color: lightblue;
 }
+
+.sidebar {
+  background:linear-gradient(-45deg, #fff, #e8f7fc );
+}
+
+.header {
+    background:linear-gradient(-45deg, #61c3e4, rgb(235, 246, 247));
+}

@@ -8,7 +8,7 @@ class BooksController < ApplicationController
     if params[:room_id]
       @room = Room.find(params[:room_id])
       @url = room_books_path(@room)
-    # bookの所属先がroomの場合
+    # bookの所属先がuserの場合
     else
       @url = books_path
     end
@@ -20,7 +20,7 @@ class BooksController < ApplicationController
     if params[:room_id]
       @room = Room.find(params[:room_id])
       @book = @room.books.new(book_params)
-    # bookの所属先がroomの場合
+    # bookの所属先がuserの場合
     else
       @book = @user.books.new(book_params)
     end
@@ -60,7 +60,7 @@ class BooksController < ApplicationController
       else
         render :edit
       end
-    # bookの所属先がroomの場合
+    # bookの所属先がuserの場合
     else
       @book = @user.books.find(params[:id])
       if @book.update_attributes(book_update_params)
