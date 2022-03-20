@@ -25,7 +25,7 @@ class RoomsController < ApplicationController
     if User.exists?(nickname: params[:user_name])
       user = User.find_by(nickname: params[:user_name])
       user_img = if user.avatar.file
-                   "/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
+                   "https://tubook.s3.amazonaws.com/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
                  else
                    '/assets/default-2ebaf5557392ad8670ddca8292c8e0f57477c605106977892eb415add53ef6a3.png'
                  end
