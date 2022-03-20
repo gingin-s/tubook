@@ -1,11 +1,5 @@
 import consumer from "./consumer"
 
-// スクロール
-window.scrollToBottom = () => {
-  const chatWindow = document.getElementById("chat-contents")
-  chatWindow.scroll(0, chatWindow.scrollHeight)
-}
-
 window.addEventListener('load', () => {
   const roomId = document.getElementById("chat-room-id").innerHTML
   scrollToBottom();

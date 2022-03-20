@@ -74,12 +74,9 @@
   border-radius: 10px;
   margin:0 0 0 auto;
   border: solid 1px black;
-	/* outline: solid 1px black;
-	/* outline-offset: 2px; */
+  background-color: rgb(255, 255, 255);
   margin-top: 2px;
   margin-bottom: 2px;
-  /* -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset,0 0 4px rgba(0, 0, 0, 0.2) ;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset,0 0 4px rgba(0, 0, 0, 0.2) ; */
   box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /*影指定*/
 }
 .notes-info{

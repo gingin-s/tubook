@@ -12,8 +12,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_params)
-    if @room.save
+    @new_room = Room.new(room_params)
+    if @new_room.save
       redirect_to room_path(@room.id)
     else
       @user = User.find(current_user.id)

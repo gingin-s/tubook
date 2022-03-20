@@ -21,6 +21,31 @@
   background-color: gray;
   color: white;
 }
+
+/* 新しいbookの作成 */
+.room-new-book-btn {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: start;
+  
+}
+.room-new-book-link {
+  text-decoration: none;
+  color: gray;
+  height: 30px;
+  width: 50px;
+  margin-top: 10px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  text-align: center;
+}
+.room-new-book-link:hover {
+  color: white;
+  background-color: gray;
+}
+
+
 .side-rooms {
   overflow: scroll;
   height: 340px;

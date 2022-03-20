@@ -4,12 +4,13 @@
     <%= render "shared/header" %>
   </div>
   <div class="top_page-wrapper">
-    <div class="chat-wrapper">
-    <% if @room %>
-      <%= render "shared/chat_room" %> 
-    <% else %>
-      <%= render "shared/sidebar" %> 
-    <% end %>
+    <div class="side-wrapper">
+      <% if @room %>
+        <%= render "shared/rooms_sidebar" %> 
+        <%= render "shared/chat_room" %> 
+      <% else %>
+        <%= render "shared/sidebar" %> 
+      <% end %>
     </div>
 
     <div class="show-book-wrapper">

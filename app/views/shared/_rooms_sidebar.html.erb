@@ -10,10 +10,10 @@
         <% end %>
         <div class="text-center"><%= @room.name %></div>
       </div>
-      <div class="d-block w-100 ps-5 pt-4">
+      <div class="d-block w-100 ps-5 pt-2">
         <div class="fs-6 ">画像の編集</div>
         <%= form_with model: @room, url:change_avatar_room_path(@room.id), multipart: true, local: true do |f| %>
-        <div class="d-flex justify-content-start pt-3">
+        <div class="d-flex justify-content-start pt-1">
           <div class="button-wrapper">
               <label class="form-avatar" id="user_avatar">
               <span class="avatar-file">画像を選択</span>
@@ -25,6 +25,9 @@
             
           </div>
           <% end %>
+        </div>
+        <div class="open-chat-room">
+          <button id="open-chat-button">チャットルームを開く</button>
         </div>
       </div>
     </div>

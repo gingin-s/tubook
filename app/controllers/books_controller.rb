@@ -37,6 +37,7 @@ class BooksController < ApplicationController
     gon.notes = @notes
     @note = Note.new
     @user = current_user
+    @rooms = @user.rooms
     if @book.room
       @room = @book.room
       @chat_messages = @room.chat_messages.includes(:user)
