@@ -19,11 +19,10 @@
   border-right: 1px solid lightgray;
 }
 
-.sidebar {
-  /* background:linear-gradient(-45deg, #fff, #e8f7fc ); */
-  background-color: rgb(250, 254, 255);
-}
+/* .sidebar {
+} */
 
 .header {
-    background:linear-gradient(-45deg, #b5e4f3, rgb(235, 246, 247));
+    background:linear-gradient(-45deg, #f0f0f0, rgb(241, 241, 241));  
 }
+

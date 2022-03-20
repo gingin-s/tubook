@@ -1,3 +1,12 @@
+.chat-room {
+  width: 320px;
+  height: 100%;
+  border-right: 1px solid lightgray;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+}
+
 .chat-window {
   margin-top: 20px ;
   height: 500px;
@@ -21,6 +30,7 @@
 }
 .chat-content {
   display: flex;
+  flex-wrap: wrap;
 }
 .chat-content.left {
   flex-direction: row;
@@ -53,6 +63,9 @@
   position: relative; /* 三角の位置を固定するために設定 */
   padding: 8px 15px; /* ふきだし内の余白 */
   text-align: left; 
+  display: flex;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .right .chat-message {
