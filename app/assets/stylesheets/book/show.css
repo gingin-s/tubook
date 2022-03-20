@@ -166,7 +166,7 @@
   border-radius: 10px;
 }
 .note-submit:hover {
-  background-color: darkblue;
+  background-color: gray;
   color: white;
 }
 
