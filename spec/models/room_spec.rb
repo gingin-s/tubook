@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Room, type: :model do
   before do
-    @room= FactoryBot.build(:room)
+    @room = FactoryBot.build(:room)
   end
   describe 'room新規作成' do
     context '新規作成できる場合' do

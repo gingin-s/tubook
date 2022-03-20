@@ -80,8 +80,8 @@ class BooksController < ApplicationController
     if book.room
       room = book.room
       redirect_to room_path(room) if book.destroy
-    else
-      redirect_to root_path if book.destroy
+    elsif book.destroy
+      redirect_to root_path
     end
   end
 
@@ -91,6 +91,7 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
     @rooms = @user.rooms
   end
+
   def set_book
     @book = Book.find(params[:id])
   end
@@ -103,11 +104,9 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :description)
   end
 
-
-
   def move_to_index
     if @book.room
-      redirect_to root_path unless  @book.room.users.exists?(current_user.id)
+      redirect_to root_path unless @book.room.users.exists?(current_user.id)
     else
       redirect_to root_path unless current_user.id == @book.user.id
     end
