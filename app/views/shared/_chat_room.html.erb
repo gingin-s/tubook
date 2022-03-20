@@ -3,56 +3,24 @@
   <div class="container">
     <div class=" pt-4 fw-bold partition-border"><span class="text-danger">C</span>hat Room</div>
     <div class="chat-area">
-      <div class="chat-window">
+      <div class="chat-window" id="chat-window">
         <div class="chat-room-name">
           <%="#{@room.name}(#{@room.users.length})"%>
         </div>
         <%  if @chat_messages %>
-          <div class="chat-contents">
+          <div class="chat-contents" id="chat-contents" >
             <% @chat_messages.each do |message| %>
-              <% if message.user_id = current_user.id %>
+              <% if message.user_id == current_user.id %>
                 <%# チャットメッセージ 右%>
-                <div class="chat-content right">
-                  <div class="chat-user-icon">
-                    <% if current_user.avatar? %>
-                      <%= image_tag current_user.avatar.url, alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
-                    <% else %>
-                      <%= image_tag "default.png", alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
-                    <% end %>
-                  </div>
-                  <div class="chat-body">
-                    <div class="chat-user right">
-                      <%= current_user.nickname%>
-                    </div>
-                    <div class="chat-message">
-                      <%= message.text %>
-                    </div>
-                  </div>
-                </div>
+                <%= render partial:"shared/right_message", locals: { message: message} %>
               <% else %>
                 <%# チャットメッセージ 左%>
-                <div class="chat-content left">
-                  <div class="chat-user-icon">
-                    <% if message.user.avatar? %>
-                      <%= image_tag message.user.avatar.url, alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
-                    <% else %>
-                      <%= image_tag "default.png", alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
-                    <% end %>
-                  </div>
-                  <div class="chat-body">
-                    <div class="chat-user left">
-                      <%= message.user.nickname%>
-                    </div>
-                    <div class="chat-message">
-                      <%= message.text %>
-                    </div>
-                  </div>
-                </div>
+                <%= render partial:"shared/left_message", locals: {message: message} %>
               <% end %>
             <% end %>
           </div>
         <% end %>
-        <%= form_with model: [@room, @chat_message],local: true do |f| %>
+        <%= form_with model: [@room, @chat_message], id:"chat-form" do |f| %>
           <div class="chat-form">
             <div class="message-form">
               <%= f.text_area :text, id: "chat_message_text", placeholder: "メッセージ", class: "form-control rounded-4" %>
@@ -66,6 +34,8 @@
           </div>
         <% end %>
       </div>
+      <div class="hidden" id="chat-room-id"><%=@room.id %></div>
+      <div class="hidden" id="current-user-id"><%=current_user.id %></div>
     </div>
   </div>
 </div>

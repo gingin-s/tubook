@@ -1,0 +1,17 @@
+<div class="chat-content right">
+  <div class="chat-user-icon">
+    <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar.url, alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
+    <% else %>
+      <%= image_tag "default.png", alt: "mdo", width:"30", height:"30", class:"rounded-circle user-icon" %>
+    <% end %>
+  </div>
+  <div class="chat-body">
+    <div class="chat-user right">
+      <%= current_user.nickname%>
+    </div>
+    <div class="chat-message">
+      <%= message.text %>
+    </div>
+  </div>
+</div>

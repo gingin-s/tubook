@@ -33,11 +33,14 @@ class BooksController < ApplicationController
 
   def show
     gon.youtube_id = @book.youtube_id
-    @notes = @book.notes.order(video_time: 'ASC')
+    @notes = @book.notes.order(video_time: 'ASC').includes(:user)
     gon.notes = @notes
     @note = Note.new
+    @user = current_user
     if @book.room
       @room = @book.room
+      @chat_messages = @room.chat_messages.includes(:user)
+      @chat_message = ChatMessage.new
     end
   end
 
