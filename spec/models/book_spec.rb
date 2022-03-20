@@ -15,7 +15,6 @@ RSpec.describe Book, type: :model do
       end
     end
     context '新規作成できない場合' do
-      # ユーザー情報
       it 'titleが空では作成できない' do
         @book.title = ''
         expect(@book.valid?).to eq(false)

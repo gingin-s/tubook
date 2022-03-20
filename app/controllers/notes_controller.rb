@@ -19,9 +19,7 @@ class NotesController < ApplicationController
   def edit
     @note = Note.find(params[:id])
     @book = @note.book
-    if current_user.id == @note.user_id
-      render 'edit.js.erb'
-    end
+    render 'edit.js.erb' if current_user.id == @note.user_id
   end
 
   def update

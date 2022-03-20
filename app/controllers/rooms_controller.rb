@@ -1,13 +1,13 @@
 class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_room_data, only:[:show, :change_avatar, :add_member, :remove_member]
+  before_action :set_room_data, only: [:show, :change_avatar, :add_member, :remove_member]
   before_action :move_to_root, only: [:show, :remove_member, :add_member, :change_avatar]
   def new
     @user = User.find(current_user.id)
     @rooms = @user.rooms
     @new_room = Room.new
   end
-  
+
   def show
   end
 
@@ -36,7 +36,6 @@ class RoomsController < ApplicationController
       render json: { error_message: error_message, form_value: params[:user_name] }
     end
   end
-
 
   def change_avatar
     if @room.update_attributes(avatar: params_room_avatar[:avatar])
@@ -70,14 +69,13 @@ class RoomsController < ApplicationController
       end
     else
       @error_message = "#{user_name_params[:nickname]}は存在しません"
-      @error_message = "ユーザー名を入力してください" if user_name_params[:nickname].blank?
+      @error_message = 'ユーザー名を入力してください' if user_name_params[:nickname].blank?
       render :show
     end
   end
 
-
-  
   private
+
   def set_room_data
     @user = User.find(current_user.id)
     @room = Room.find(params[:id])
@@ -86,11 +84,10 @@ class RoomsController < ApplicationController
     @chat_message = ChatMessage.new
   end
 
-
   def user_name_params
     params.require(:room).permit(:nickname)
   end
-  
+
   def room_params
     params.require(:room).permit(:name, user_ids: [])
   end
@@ -100,9 +97,6 @@ class RoomsController < ApplicationController
   end
 
   def move_to_root
-    unless RoomUser.where(room_id: params[:id]).find_by(user_id: current_user.id)
-      redirect_to root_path
-    end
+    redirect_to root_path unless RoomUser.where(room_id: params[:id]).find_by(user_id: current_user.id)
   end
-
 end
