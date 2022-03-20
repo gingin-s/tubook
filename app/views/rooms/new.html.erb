@@ -48,23 +48,23 @@
                 </div>
               </div>
             </div>
-          <div class="new-room-submit">
-            <div class="door-submit">  
-              <div class="door-closed">
-                <i class="fas fa-door-closed fa-3x text-primary"></i>
-              </div>
-              <label>
-                <div class="door-open">
+          <label>
+            <div class="new-room-submit">
+              <div class="door-submit">  
+                <div class="door-closed">
+                  <i class="fas fa-door-closed fa-3x text-primary"></i>
+                </div>
+                  <div class="door-open">
                     <i class="fas fa-door-open fa-3x text-primary"></i>
+                    <div class="man-walking">
+                      <i class="fas fa-walking fa-3x "></i>
+                    </div>
                     <%= f.button "作成", type: "button", onclick: "submit()", class:"visually-hidden" %>
-                </div>
-                <div class="man-walking">
-                  <i class="fas fa-walking fa-3x "></i>
-                </div>
-              </label>
+                  </div>
+              </div>
+              <h6 class="text-dark ms-5">Roomを作成</h6>
             </div>
-          <h6 class="text-dark">Roomを作成</h6>
-          </div>
+          </label>
         <% end %>
       </div>
     </div>

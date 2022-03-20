@@ -1,0 +1,44 @@
+
+<div class="chat-room" id="chat-room">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class=" pt-4 fw-bold partition-border"><span class="text-danger">C</span>hat Room</div>
+      <button id="close-chat-button">閉じる<i class="far fa-times-circle ps-2"></i></button>
+    </div>
+    <div class="chat-area">
+      <div class="chat-window" id="chat-window">
+        <div class="chat-room-name">
+          <%="#{@room.name}(#{@room.users.length})"%>
+        </div>
+        <%  if @chat_messages %>
+          <div class="chat-contents" id="chat-contents" >
+            <% @chat_messages.each do |message| %>
+              <% if message.user_id == current_user.id %>
+                <%# チャットメッセージ 右%>
+                <%= render partial:"shared/right_message", locals: { message: message} %>
+              <% else %>
+                <%# チャットメッセージ 左%>
+                <%= render partial:"shared/left_message", locals: {message: message} %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= form_with model: [@room, @chat_message], id:"chat-form" do |f| %>
+          <div class="chat-form">
+            <div class="message-form">
+              <%= f.text_area :text, id: "chat_message_text", placeholder: "メッセージ", class: "form-control rounded-4" %>
+            </div>
+            <div class="chat-submit">
+              <label>
+                <i class="fab fa-telegram-plane"></i>
+                <%= f.submit "送信", class:"visually-hidden" %>
+              </label>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="hidden" id="chat-room-id"><%=@room.id %></div>
+      <div class="hidden" id="current-user-id"><%=current_user.id %></div>
+    </div>
+  </div>
+</div>

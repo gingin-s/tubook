@@ -91,6 +91,7 @@
   display: flex;
   width: 250px;
   border-bottom: 1px solid;
+  align-items: end;
 }
 .door-submit {
   position: relative;
@@ -106,21 +107,18 @@
   opacity: 0;
 }
 .door-open {
-  cursor: pointer;
+  display: flex;
 }
-.door-closed {
-  cursor: pointer;
-}
-.door-submit:hover .door-open{
+.new-room-submit:hover .door-open{
   opacity: 1;
 }
-.door-submit:hover .door-closed{
+.new-room-submit:hover .door-closed{
   opacity: 0;
 }
 .man-walking {
   display: inline-block;
   transform: scaleX(-1);
 }
-.man-walking:hover {
+.new-room-submit:hover {
   cursor: pointer;
 }

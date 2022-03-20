@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_room_data, only:[:show, :change_avatar, :add_member]
+  before_action :set_room_data, only:[:show, :change_avatar, :add_member, :remove_member]
   before_action :move_to_root, only: [:show, :remove_member, :add_member, :change_avatar]
   def new
     @user = User.find(current_user.id)
@@ -12,8 +12,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_params)
-    if @room.save
+    @new_room = Room.new(room_params)
+    if @new_room.save
       redirect_to room_path(@room.id)
     else
       @user = User.find(current_user.id)
@@ -82,7 +82,10 @@ class RoomsController < ApplicationController
     @user = User.find(current_user.id)
     @room = Room.find(params[:id])
     @books = @room.books.order(created_at: 'DESC').includes(:notes)
+    @chat_messages = @room.chat_messages.includes(:user)
+    @chat_message = ChatMessage.new
   end
+
 
   def user_name_params
     params.require(:room).permit(:nickname)

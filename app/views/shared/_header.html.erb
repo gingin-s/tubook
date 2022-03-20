@@ -8,8 +8,8 @@
         <% if user_signed_in? %>
           <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center align-items-end mb-md-0 fs-5">
             <% if @room %>
-            <li><%= link_to "Room(#{@room.name})", room_path(@room), class:"nav-link px-3 pb-0 link-dark" %></li>
-            <li><%= link_to current_user.nickname, root_path, class:"nav-link px-3 pb-0 link-dark" %></li>
+            <li><%#= link_to "ChatRoom", room_path(@room), class:"nav-link px-3 pb-0 link-dark" %></li>
+            <li><%= link_to "#{@room.name} / #{current_user.nickname}", room_path(@room), class:"nav-link px-3 pb-0 link-dark" %></li>
             <% else %>
             <li><%= link_to current_user.nickname, root_path, class:"nav-link px-3 pb-0 link-dark" %></li>
             <% end %>
@@ -27,13 +27,12 @@
               <% end %>
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-              <% if @room %>
-                <li><%= link_to "＋新規Book(#{current_user.nickname})", new_book_path, class:"dropdown-item" %></li>
-                <li><%= link_to "＋新規Book(Room:#{@room.name})", new_room_book_path(@room), class:"dropdown-item" %></li>
-              <% else %>
-                <li><%= link_to "＋新規Book", new_book_path, class:"dropdown-item" %></li>
-              <% end %>
+              <li><%= link_to "＋新規Book", new_book_path, class:"dropdown-item" %></li>
               <li><%= link_to "＋新規Room", new_room_path, class:"dropdown-item" %></li>
+              <% if @room %>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "＋新規Book(Room:#{@room.name})", new_room_book_path(@room), class:"dropdown-item" %></li>
+              <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
             </ul>

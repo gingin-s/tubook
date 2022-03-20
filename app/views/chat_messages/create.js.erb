@@ -1,0 +1,4 @@
+document.getElementById("chat-form").reset();
+var html = "<%= escape_javascript(render(partial: 'shared/right_message', locals: {message: @chat_message})) %>";
+document.getElementById('chat-contents').insertAdjacentHTML("beforeend", html);
+scrollToBottom();
