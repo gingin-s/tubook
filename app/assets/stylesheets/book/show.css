@@ -77,7 +77,7 @@
   background-color: rgb(255, 255, 255);
   margin-top: 2px;
   margin-bottom: 2px;
-  box-shadow: 2px 2px 2px 2px rgb(44, 44, 44);   /*影指定*/
+  box-shadow: 2px 2px 2px 2px rgb(44, 44, 44); 
 }
 .notes-info{
   width: 90%;
@@ -94,8 +94,9 @@
 /* 現動画時刻のnoteの表示 */
 .display-area {
   border-bottom: 3px double black;
-  min-height: 60px;
+  min-height: 50px;
   width: 50%;
+  margin-bottom: 10px;
 }
 .display-now {
   font-size: 20px;
@@ -115,9 +116,8 @@
   width: 95%;
   margin: auto;
   padding: 10px 2%;
-  border: 1px solid;
-  border: solid 1px rgb(122, 1, 1);    	/* 内側の線になる一本線の枠線をひく*/
-	outline: solid 1px rgb(122, 1, 1);    /* 外側の線になる一本線の枠線をひく*/
+  border: solid 1px rgb(122, 1, 1); 
+	outline: solid 1px rgb(122, 1, 1);
 	outline-offset: 2px;
   border-radius: 10px;
 }
@@ -127,7 +127,8 @@
 
 .video-time-form {
   width: 80%;
-
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .video-time-form .fa-pencil  {
