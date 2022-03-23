@@ -8,10 +8,12 @@ window.addEventListener('load', () => {
     room_id: roomId
   }, {
     connected() {
+      console.log("接続")
     },
 
     disconnected() {
       // Called when the subscription has been terminated by the server
+      console.log("解除")
     },
 
     received(data) {
@@ -23,6 +25,7 @@ window.addEventListener('load', () => {
         document.getElementById('chat-contents').insertAdjacentHTML("beforeend", data.leftMessage);
       }
       scrollToBottom();
+      document.getElementById("chat-form").reset();
     }
   });
 });
