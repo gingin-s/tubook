@@ -15,12 +15,13 @@ window.addEventListener('load', () => {
     },
 
     received(data) {
-      console.log("通信成功")
+      console.log("受信成功")
       const userId = Number(document.getElementById("current-user-id").innerHTML);
       if (data.id === userId ){
-        return
+        document.getElementById('chat-contents').insertAdjacentHTML("beforeend", data.rightMessage);
+      } else {
+        document.getElementById('chat-contents').insertAdjacentHTML("beforeend", data.leftMessage);
       }
-      document.getElementById('chat-contents').insertAdjacentHTML("beforeend", data.message);
       scrollToBottom();
     }
   });

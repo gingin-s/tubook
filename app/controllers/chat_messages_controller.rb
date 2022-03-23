@@ -2,7 +2,7 @@ class ChatMessagesController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @chat_message = @room.chat_messages.create(message_params)
-    RoomChannel.broadcast_to @room, { message: @chat_message.template, id: @chat_message.user_id }
+    RoomChannel.broadcast_to @room, { leftMessage: @chat_message.left_template, rightMessage: @chat_message.right_template, id: @chat_message.user_id }
   end
 
   private

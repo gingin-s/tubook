@@ -4,7 +4,10 @@ class ChatMessage < ApplicationRecord
 
   validates :text, presence: true
 
-  def template
+  def left_template
     ApplicationController.renderer.render partial: 'shared/left_message', locals: { message: self }
+  end
+  def right_template
+    ApplicationController.renderer.render partial: 'shared/right_message', locals: { message: self }
   end
 end
