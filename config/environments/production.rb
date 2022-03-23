@@ -6,8 +6,8 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = ['https://tubook.herokuapp.com', 'http://tubook.herokuapp.com']
 
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = "ws://54.65.75.118/cable" 
-  config.action_cable.allowed_request_origins = ['http://54.65.75.118']
+  config.action_cable.url = "ws://52.198.247.103/cable" 
+  config.action_cable.allowed_request_origins = ['http://52.198.247.103']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
