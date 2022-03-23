@@ -52,6 +52,5 @@ production:
   database: tubook_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST_NAME'] %>
   socket: /var/lib/mysql/mysql.sock
 
