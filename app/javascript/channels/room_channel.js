@@ -15,8 +15,8 @@ window.addEventListener('load', () => {
     },
 
     received(data) {
+      console.log("通信成功")
       const userId = Number(document.getElementById("current-user-id").innerHTML);
-      debugger
       if (data.id === userId ){
         return
       }
