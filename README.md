@@ -194,7 +194,7 @@ http://52.198.247.103/
 
 # 開発環境
 - フロントエンド
-  - HTML/css
+  - HTML/CSS
   - JavaScript
 - バックエンド
   - Ruby 2.6.5
