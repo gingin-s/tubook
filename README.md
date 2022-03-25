@@ -88,6 +88,10 @@ http://52.198.247.103/
 - chatのメッセージに投稿時刻表示を追加する  
 
 
+# 画面遷移図
+<img width="1242" alt="画面遷移図" src="https://user-images.githubusercontent.com/98451976/160046120-ee3419df-8aeb-44f7-813e-cf2db39fc0d4.png">
+
+
 # データベース設計
 <img width="1045" alt="ER図" src="https://user-images.githubusercontent.com/98451976/160046086-2a311a86-21df-4f24-a78c-adf255601cb0.png">
 
@@ -203,9 +207,6 @@ http://52.198.247.103/
 
 - belongs_to :room
 - belongs_to :user
-
-# 画面遷移図
-<img width="1242" alt="画面遷移図" src="https://user-images.githubusercontent.com/98451976/160046120-ee3419df-8aeb-44f7-813e-cf2db39fc0d4.png">
 
 # 開発環境
 - フロントエンド
