@@ -12,11 +12,16 @@ http://52.198.247.103/
 
 # テスト用アカウント
 - basic認証ID: admin
-- basic認証パスワード: 2222
+- basic認証パスワード: 2222  
 ### ゲストアカウント
-- メールアドレス guest@sample.com
-- パスワード aaa222
-### ルーム招待用アカウント名
+- ゲスト1
+  - メールアドレス: g1@sample.com
+  - パスワード: aaa222
+- ゲスト2
+  - g2@sample.com
+  -パスワード: aaa222  
+
+### その他ルーム招待用アカウント名
 - tanaka
 - suzuki
 - GINGIN
