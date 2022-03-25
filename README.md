@@ -74,7 +74,7 @@ http://52.198.247.103/
 
 
 # データベース設計
-<img src="https://user-images.githubusercontent.com/98451976/159951485-0d41c187-11e5-4d20-854f-efb85f06140c.png">
+<img width="1045" alt="ER図" src="https://user-images.githubusercontent.com/98451976/160046086-2a311a86-21df-4f24-a78c-adf255601cb0.png">
 
 # テーブル設計
 
@@ -190,7 +190,7 @@ http://52.198.247.103/
 - belongs_to :user
 
 # 画面遷移図
-<img src="https://user-images.githubusercontent.com/98451976/159951769-c40cb93d-fbff-4f79-a433-75c2515ae3b7.png">
+<img width="1242" alt="画面遷移図" src="https://user-images.githubusercontent.com/98451976/160046120-ee3419df-8aeb-44f7-813e-cf2db39fc0d4.png">
 
 # 開発環境
 - フロントエンド
