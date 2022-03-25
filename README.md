@@ -50,7 +50,7 @@ http://52.198.247.103/
 
 ### Roomの作成
 ① ヘッダー右のユーザーアイコンをクリックし、プルダウンリストから「＋新規Room」をクリックします。  
-<img width="1440" alt="Room作成１" src="https://user-images.githubusercontent.com/98451976/160045093-fd746f06-e10c-4206-9e11-5d58b9cff37b.png">
+<img width="1440" alt="Room作成１" src="https://user-images.githubusercontent.com/98451976/160045093-fd746f06-e10c-4206-9e11-5d58b9cff37b.png">  
 ② Roomの名前を入力します（必須）  
 ③追加したいメンバーのアカウント名を入力し、＋アイコンをクリックすると、④のmembersに追加されます。  
 ④メンバーの追加が終わったら、⑤のドアのアイコンをクリックします。  
@@ -60,7 +60,7 @@ http://52.198.247.103/
 ### Room内の操作
 ① ルームメンバーの追加や削除などの管理が行なえます。  
 ② サイドバー内で、ルームメンバーとのリアルタイムグループチャットが行なえます。  
-<img width="1440" alt="Room内操作" src="https://user-images.githubusercontent.com/98451976/159942587-40a98095-3dbb-49a2-867d-1b7203e913c1.png">
+<img width="1440" alt="Room内操作" src="https://user-images.githubusercontent.com/98451976/159942587-40a98095-3dbb-49a2-867d-1b7203e913c1.png">  
 <img width="1440" alt="チャット画面" src="https://user-images.githubusercontent.com/98451976/160086074-3c67c603-6442-44a6-9c87-c09fd5e405a0.png">
 
 
