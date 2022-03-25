@@ -18,7 +18,7 @@ http://52.198.247.103/
 # 利用方法
 ### Book作成
 ① ヘッダー右のユーザーアイコンをクリックし、プルダウンリストから「＋新規Book」をクリックします。
-<img width="1437" alt="新規Book1" src="https://user-images.githubusercontent.com/98451976/159934190-655e2438-6e05-4aa3-818b-57ef8458fc6a.png">
+<img width="1440" alt="新規Book1" src="https://user-images.githubusercontent.com/98451976/160044989-6f9e3a69-f1e1-4ce3-b5d7-f6fd558365f9.png">
 
 
 ② BookにしたいYouTubeの動画URLを貼り付けます。（必須）  
@@ -38,7 +38,7 @@ http://52.198.247.103/
 
 ### Roomの作成
 ① ヘッダー右のユーザーアイコンをクリックし、プルダウンリストから「＋新規Room」をクリックします。  
-<img width="1440" alt="Room作成１" src="https://user-images.githubusercontent.com/98451976/159938662-cfb3eda9-4f7b-4976-ba95-f6a59f4422ea.png">
+<img width="1440" alt="Room作成１" src="https://user-images.githubusercontent.com/98451976/160045093-fd746f06-e10c-4206-9e11-5d58b9cff37b.png">
 ② Roomの名前を入力します（必須）  
 ③追加したいメンバーのアカウント名を入力し、＋アイコンをクリックすると、④のmembersに追加されます。  
 ④メンバーの追加が終わったら、⑤のドアのアイコンをクリックします。  
