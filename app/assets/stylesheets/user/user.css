@@ -12,6 +12,7 @@
   left: 50px;
   z-index: 0;
 }
+
 @media (max-width: 1024px) {
   .tubook-description {
     display: none;
