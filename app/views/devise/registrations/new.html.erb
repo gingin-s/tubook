@@ -1,7 +1,11 @@
-<%= render "shared/header" %>
-
-<div class="modal modal-signin position-static d-block py-0" tabindex="-1" role="dialog" id="modalSignin">
-  <div class="modal-dialog" role="document">
+<div class="header">
+  <%= render "shared/header" %>
+</div>
+<div class="top_page-wrapper">
+  <div class="tubook-description" >
+    <%=image_tag 'tubookTOP.jpeg', size:"700x580" %>
+  </div>
+  <div class="modal-dl" role="document">
     <div class="modal-content rounded-5 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
         <h2 class="fw-bold mb-0 fs-3">新規登録</h2>
@@ -40,6 +44,7 @@
                 <%= link_to "ログイン", new_user_session_path, class:"link-to-login" %>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
