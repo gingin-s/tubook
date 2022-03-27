@@ -227,6 +227,7 @@ http://52.198.247.103/
   - Ruby 2.6.5
   - Ruby on Rail 6.0.0
 - インフラ
+  - Nginx
   - AWS
     - EC2
     - mariaDB
