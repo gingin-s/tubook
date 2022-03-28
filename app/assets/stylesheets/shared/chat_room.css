@@ -38,7 +38,15 @@
   margin: 5px 5px;
   height: 80%;
   overflow: auto;
+  /*IE(Internet Explorer)・Microsoft Edgeでスクロールバー非表示*/
+  -ms-overflow-style: none;
+  /*Firefoxでスクロールバー非表示*/
+  scrollbar-width: none;
 }
+.chat-contents::-webkit-scrollbar{
+  display: none;
+}
+
 .chat-content {
   display: flex;
   flex-wrap: wrap;

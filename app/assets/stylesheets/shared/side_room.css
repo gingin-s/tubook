@@ -32,10 +32,16 @@
   height: 20px;
   display: flex;
   overflow-x: auto;
+  /*IE(Internet Explorer)・Microsoft Edgeでスクロールバー非表示*/
+  -ms-overflow-style: none;
+  /*Firefoxでスクロールバー非表示*/
+  scrollbar-width: none;
+}
+.side-room-members::-webkit-scrollbar{
+  display: none;
 }
 .side-room-member {
   padding-left: 5px;
-
 }
 
 .side-room-right {
