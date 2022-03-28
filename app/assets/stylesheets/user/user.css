@@ -1,6 +1,5 @@
 .modal-dl {
   max-width: 500px;
-  height: calc(100vh - 80px);
   margin: 20px 70px 0 auto;
   display: flex;
 }
