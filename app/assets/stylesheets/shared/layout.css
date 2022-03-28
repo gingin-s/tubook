@@ -10,7 +10,7 @@
 .top_page-wrapper {
   display: flex;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
 }
 .side-wrapper {
   position: relative;
