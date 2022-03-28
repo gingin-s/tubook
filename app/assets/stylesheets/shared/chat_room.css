@@ -37,7 +37,7 @@
 .chat-contents {
   margin: 5px 5px;
   height: 80%;
-  overflow: scroll;
+  overflow: auto;
 }
 .chat-content {
   display: flex;

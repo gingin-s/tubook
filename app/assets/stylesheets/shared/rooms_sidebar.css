@@ -20,7 +20,7 @@
 /* サイドバーメンバー */
 .side-room-member-list {
   height: 220px;
-  overflow: scroll;
+  overflow: auto;
 }
 .member-list {
   display: flex;

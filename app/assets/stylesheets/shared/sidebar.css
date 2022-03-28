@@ -47,6 +47,6 @@
 
 
 .side-rooms {
-  overflow: scroll;
+  overflow: auto;
   height: 340px;
 }

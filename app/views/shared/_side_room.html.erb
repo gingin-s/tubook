@@ -9,7 +9,7 @@
         <div class="side-room-members">
           <% room.users.each do |user|%>
           <div class="side-room-member">
-            <%= user.nickname %> /
+            <%= "#{user.nickname}/" %> 
           </div>
           <% end %>
         </div>

@@ -68,7 +68,7 @@
   height: 90%;
   width: 100%;
   padding: 10px 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 /* 招待メンバー中身 */
 .add-member-list {
