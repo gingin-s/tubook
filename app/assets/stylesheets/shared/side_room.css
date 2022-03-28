@@ -32,6 +32,7 @@
   height: 20px;
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   /*IE(Internet Explorer)・Microsoft Edgeでスクロールバー非表示*/
   -ms-overflow-style: none;
   /*Firefoxでスクロールバー非表示*/
