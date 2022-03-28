@@ -1,6 +1,6 @@
 .wrapper {
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: 100%;
 }
 
 .container-fluid{
@@ -9,8 +9,8 @@
 
 .top_page-wrapper {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
 }
 .side-wrapper {
   position: relative;
@@ -18,7 +18,7 @@
 
 .sidebar {
   width: 320px;
-  height: 100%;
+  height: auto;
   border-right: 1px solid lightgray;
   z-index:1;
 }
