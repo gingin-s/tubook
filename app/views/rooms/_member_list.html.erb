@@ -13,7 +13,7 @@
   <div class="delete-room-member">
   <% if user.id == current_user.id %>
     <div class="delete-myself">
-      <%= link_to "退出", remove_member_room_path(@room.id, user_id: user.id), method: :delete, class:"exit-room" %>
+      <%= link_to "退室", remove_member_room_path(@room.id, user_id: user.id), method: :delete, class:"exit-room" %>
     </div>
   <% else %>
     <%= link_to remove_member_room_path(@room.id, user_id: user.id), method: :delete do %> 
