@@ -232,5 +232,7 @@ http://52.198.247.103/
     - EC2
     - mariaDB
     - S3
+  - docker
+  - docker compose
 - テスト
   - Rspec
