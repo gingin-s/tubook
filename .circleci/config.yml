@@ -21,9 +21,6 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
-        environment:
-          AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-          AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
