@@ -21,6 +21,9 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -31,8 +34,6 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-      - AWS_ACCESS_KEY_ID
-      - AWS_SECRET_ACCESS_KEY
     working_directory: ~/tubook
     steps:
       - checkout
