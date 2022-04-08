@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_room_data, only: [:show, :change_avatar, :add_member, :remove_member]
   before_action :move_to_root, only: [:show, :remove_member, :add_member, :change_avatar]
+
   def new
     @user = User.find(current_user.id)
     @rooms = @user.rooms
@@ -24,11 +25,7 @@ class RoomsController < ApplicationController
   def add_member_to_lists
     if User.exists?(nickname: params[:user_name])
       user = User.find_by(nickname: params[:user_name])
-      user_img = if user.avatar.file
-                   "https://tubook.s3.amazonaws.com/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
-                 else
-                   '/assets/default-2ebaf5557392ad8670ddca8292c8e0f57477c605106977892eb415add53ef6a3.png'
-                 end
+      user_img = User.load_avatar(user)
       error_message = "#{params[:user_name]}さんは追加済みです"
       render json: { user_id: user.id, user_name: user.nickname, user_img: user_img, error_message: error_message }
     else

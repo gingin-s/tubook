@@ -16,4 +16,16 @@ class User < ApplicationRecord
   validates :nickname,  presence: true,
                         format: { with: /\A[a-zA-Z0-9_]+\z/, allow_blank: true },
                         uniqueness: true
+
+
+
+  def self.load_avatar(user)
+    if user.avatar.file
+      "https://tubook.s3.amazonaws.com/uploads/user/avatar/#{user.id}/#{user.avatar.identifier}"
+    else
+      '/assets/default-2ebaf5557392ad8670ddca8292c8e0f57477c605106977892eb415add53ef6a3.png'
+  end
+end
+
+
 end
