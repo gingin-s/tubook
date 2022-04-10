@@ -31,7 +31,7 @@
               <li><%= link_to "＋新規Room", new_room_path, class:"dropdown-item" %></li>
               <% if @room %>
                 <li><hr class="dropdown-divider"></li>
-                <li><%= link_to "＋新規Book(Room:#{@room.name})", new_room_book_path(@room), class:"dropdown-item" %></li>
+                <li><%= link_to "＋新規Book(Room:#{@room.name})", new_room_room_book_path(@room), class:"dropdown-item" %></li>
               <% end %>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
