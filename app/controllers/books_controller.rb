@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   before_action :set_user, except: :show
   before_action :set_book, only: [:show, :edit]
   before_action :move_to_index, only: [:show, :edit]
+
   def new
     # bookの所属先がroomの場合
     if params[:room_id]
@@ -97,7 +98,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :description).merge(youtube_id: get_youtube_id)
+    params.require(:book).permit(:title, :description).merge(youtube_id: GetYoutubeIdServices.url_to_id(params[:book][:youtube_id]))
   end
 
   def book_update_params
@@ -112,14 +113,4 @@ class BooksController < ApplicationController
     end
   end
 
-  # ULLからyoutube_idを切り出し
-  def get_youtube_id
-    url = params[:book][:youtube_id]
-    return url if url.blank?
-
-    id_search = url.split('v=')[1]
-    return url if id_search.nil?
-
-    id_search.slice(0, 11)
-  end
 end
